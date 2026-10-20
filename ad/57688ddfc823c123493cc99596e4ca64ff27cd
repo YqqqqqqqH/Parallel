@@ -1,0 +1,26 @@
+lab1/openmp_csr_spmv_lab/scripts/bench.py
+  s_f04013ee77069a::t_54a27be3871d70 114-126
+  s_f04013ee77069a::t_3be752b1146685 196
+  s_f04013ee77069a::t_0f4eb1c3543478 177,180
+lab1/openmp_csr_spmv_lab/实验日志.md
+  s_f04013ee77069a::t_37b759e5d7649f 76-90
+  s_f04013ee77069a::t_f4ffb4c187bf0e 91
+lab1/openmp_csr_spmv_lab/results/wait.csv
+  s_f04013ee77069a::t_3be752b1146685 1-541
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ad57688ddfc823c123493cc99596e4ca64ff27cd",
+  "prompts": {},
+  "sessions": {
+    "s_f04013ee77069a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1628b142-7969-4fa6-9bc6-22dafc955f84",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
