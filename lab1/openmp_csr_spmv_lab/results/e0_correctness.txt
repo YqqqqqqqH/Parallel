@@ -1,0 +1,10 @@
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.prefix, expected /home/felix/Parallel/Lab/lab1/.venv, got /home/felix/Parallel/Lab/lab1/openmp_csr_spmv_lab/../.venv
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/felix/Parallel/Lab/lab1/.venv, got /home/felix/Parallel/Lab/lab1/openmp_csr_spmv_lab/../.venv
+
+共 527 次运行（每次 5 个策略各检查一次），失败 0 次
+各策略在全部运行中的最坏误差（tol_ratio = 误差/容差，<1 即通过）：
+  serial tol_ratio=0.000e+00  max_abs_err=0.000e+00  @ 小矩阵+调度/块大小边界 p=24 seed=20260926 --sched auto --chunk 0
+  thread tol_ratio=0.000e+00  max_abs_err=0.000e+00  @ 小矩阵+调度/块大小边界 p=24 seed=20260926 --sched auto --chunk 0
+  omp1   tol_ratio=0.000e+00  max_abs_err=0.000e+00  @ 小矩阵+调度/块大小边界 p=24 seed=20260926 --sched auto --chunk 0
+  omp2   tol_ratio=2.504e-03  max_abs_err=1.641e-12  @ B README 16x80000 p=13 seed=1 
+  omp3   tol_ratio=2.477e-03  max_abs_err=5.969e-13  @ A 默认 p=24 seed=424242 
