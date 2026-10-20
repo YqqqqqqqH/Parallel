@@ -142,7 +142,99 @@ def fig_e1():
     print(f"已生成 results/e1_summary.csv")
 
 
-FIGS = {"e1": fig_e1}
+# ---------------------------------------------------------------- E2 偏斜扫描（核心图）
+def fig_e2():
+    d = pd.read_csv(RESULTS / "e2.csv")
+    p = int(d.threads.iloc[0])
+    info = d.groupby("long_nnz_label")[["nnz", "max_row_nnz", "row_ceiling"]].first()
+    info["r"] = p / info.row_ceiling  # r = L / (W/p)
+    t_serial = d[d.strategy == "serial"].groupby("long_nnz_label").median_ms.median()
+
+    fig, ax = plt.subplots(figsize=(6.4, 4.2))
+    r = info.r.values
+    rr = np.geomspace(r.min() * 0.85, r.max() * 1.15, 200)
+    ax.plot(rr, np.minimum(p, p / rr), color=MUTED, linewidth=1.2, linestyle=(0, (1, 2)),
+            zorder=1)
+    ax.text(0.2, p * 1.08, f"按行切分上界 min(p, W/L)，p={p}", color=MUTED, fontsize=8)
+    ax.axvline(1.0, color="#c3c2b7", linewidth=0.8, zorder=1)
+    ax.text(1.04, 0.36, "r = 1：最长一行 = 每线程平均工作量", color=MUTED, fontsize=7.5,
+            rotation=90, va="bottom")
+    rows = []
+    for key in ORDER:
+        g = d[d.strategy == key].groupby("long_nnz_label").median_ms
+        speed = t_serial / g.median()
+        line(ax, r, speed.values, key)
+        band(ax, r, (t_serial / g.quantile(0.75)).values, (t_serial / g.quantile(0.25)).values,
+             key)
+        rows.append(speed.rename(key))
+    omp1 = rows[1]
+    ratio = (omp1 / info.row_ceiling)[info.r > 1]
+    ax.annotate(f"实测 ≈ {ratio.mean():.2f} × W/L\n（与上界平行）", (r[-2], omp1.values[-2]),
+                xytext=(r[-2] * 0.42, omp1.values[-2] * 0.5), color=INK2, fontsize=8,
+                arrowprops=dict(arrowstyle="-", color=MUTED, linewidth=0.8))
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xticks(r)
+    ax.set_xticklabels([f"{v:.2g}\n{L / 1000:g}k" for v, L in zip(r, info.index)], fontsize=7.5)
+    ax.set_yticks([0.5, 1, 2, 4, 8, 16])
+    ax.set_yticklabels(["0.5", "1", "2", "4", "8", "16"])
+    ax.minorticks_off()
+    ax.set_xlabel("长行占比 r = L / (W/p)    （第二行：最长行 L 的非零元数）")
+    ax.set_ylabel("加速比  T₁ / Tₚ")
+    ax.set_title("E2：单条长行逐渐变长时各策略的加速比（rows=1e4，普通行 32 nnz，p=16）",
+                 loc="left")
+    ax.legend(loc="lower left", fontsize=8)
+    fig.tight_layout()
+    save(fig, "e2_skew_bound")
+
+    table = pd.concat([info, t_serial.rename("serial_ms"), *rows], axis=1)
+    table.to_csv(RESULTS / "e2_summary.csv", float_format="%.4f")
+    print("已生成 results/e2_summary.csv")
+
+
+# ---------------------------------------------------------------- E3 / E7 消融
+def fig_e3_e7():
+    fig, (ax3, ax7) = plt.subplots(1, 2, figsize=(9.2, 3.6),
+                                   gridspec_kw={"width_ratios": [1.05, 1]})
+
+    e3 = pd.read_csv(RESULTS / "e3.csv")
+    g = e3.groupby("sched").median_ms
+    med = g.median().sort_values(ascending=False)
+    y = np.arange(len(med))
+    ax3.barh(y, med.values, height=0.62, color=STYLE["omp1"]["color"], zorder=3)
+    for yi, v in zip(y, med.values):
+        ax3.text(v + 0.01, yi, f"{v:.3f}", va="center", fontsize=7.5, color=INK2)
+    ax3.set_yticks(y)
+    ax3.set_yticklabels(med.index, fontsize=7.5)
+    ax3.grid(axis="y", visible=False)
+    ax3.set_xlabel("中位数时间 (ms)")
+    ax3.set_xlim(0, med.max() * 1.15)
+    ax3.set_title("E3：OpenMP 1（按行）各调度方式，配置 B，p=16", loc="left")
+
+    e7 = pd.read_csv(RESULTS / "e7.csv")
+    g = e7.groupby("nnz_chunk").median_ms
+    x = g.median().index.values
+    nnz = int(e7.nnz.iloc[0])
+    band(ax7, x, g.quantile(0.25).values, g.quantile(0.75).values, "omp3")
+    line(ax7, x, g.median().values, "omp3", label=False)
+    best = g.median().idxmin()
+    ax7.annotate(f"最低 {g.median()[best]:.3f} ms", (best, g.median()[best]),
+                 xytext=(best * 0.35, g.median()[best] + 0.25), color=INK2, fontsize=8,
+                 arrowprops=dict(arrowstyle="-", color=MUTED, linewidth=0.8))
+    ax7.set_xscale("log", base=2)
+    ax7.set_xticks(x)
+    ax7.set_xticklabels([f"{c // 1024}K\n{-(-nnz // c)} 块" if c >= 1024 else
+                         f"{c}\n{-(-nnz // c)} 块" for c in x], fontsize=7.5)
+    ax7.minorticks_off()
+    ax7.set_ylim(0, None)
+    ax7.set_xlabel("每块非零元数（第二行：块数）")
+    ax7.set_ylabel("中位数时间 (ms)")
+    ax7.set_title("E7：OpenMP 3 块大小，配置 B，p=16", loc="left")
+    fig.tight_layout()
+    save(fig, "e3_e7_ablation")
+
+
+FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7}
 
 if __name__ == "__main__":
     names = sys.argv[1:] or list(FIGS)
