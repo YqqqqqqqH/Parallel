@@ -1,0 +1,9 @@
+cell,threads,lambda_median,makespan_us_median,mean_thread_rate_over_serial
+omp1:static,16,2.229,267.470,0.705
+omp1:dynamic,16,1.596,204.880,0.705
+omp2:,16,1.583,203.565,0.705
+omp3:,16,1.034,117.760,0.705
+omp1:static,20,2.464,237.005,0.585
+omp1:dynamic,20,1.895,222.400,0.585
+omp2:,20,1.527,171.670,0.585
+omp3:,20,1.044,111.495,0.585

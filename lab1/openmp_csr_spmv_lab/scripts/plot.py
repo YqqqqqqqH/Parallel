@@ -234,7 +234,88 @@ def fig_e3_e7():
     save(fig, "e3_e7_ablation")
 
 
-FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7}
+# ---------------------------------------------------------------- E6 每线程时间线
+# 2×2 的四个格子按"它在概念上等价的实体"着色：按行×静态与 std::thread 分块相同，用黄色
+CELLS = [
+    ("omp1:static", "按行 × 静态（与 std::thread 同分块）", "thread"),
+    ("omp1:dynamic", "按行 × 动态（OpenMP 1）", "omp1"),
+    ("omp2:", "nnz × 静态（OpenMP 2）", "omp2"),
+    ("omp3:", "nnz × 动态（OpenMP 3）", "omp3"),
+]
+
+
+def fig_e6(p=16):
+    d = pd.read_csv(RESULTS / "e6.csv")
+    d = d[d.threads == p].copy()
+    d["rate"] = d.nnz / (d.end_us - d.begin_us)
+    fig = plt.figure(figsize=(9.6, 5.4))
+    gs = fig.add_gridspec(2, 3, width_ratios=[1, 1, 0.78], wspace=0.32, hspace=0.42)
+    xmax = d.end_us.max() * 1.02
+    stats = []
+    for i, (cell, title, key) in enumerate(CELLS):
+        ax = fig.add_subplot(gs[i // 2, i % 2])
+        x = d[d.cell == cell]
+        span = x.groupby("round").end_us.max()
+        rnd = span.index[np.argsort(span.values)[len(span) // 2]]  # 取完成时间居中的一轮
+        g = x[x["round"] == rnd].sort_values("tid")
+        lam = g.end_us.max() / g.end_us.mean()
+        lam_med = x.groupby("round").apply(lambda t: t.end_us.max() / t.end_us.mean()).median()
+        stats.append((cell, p, lam_med, x.groupby("round").end_us.max().median()))
+        ax.barh(g.tid, g.end_us - g.begin_us, left=g.begin_us, height=0.68,
+                color=STYLE[key]["color"], zorder=3)
+        ax.axvline(g.end_us.max(), color=MUTED, linewidth=0.8, zorder=2)
+        if cell == "omp3:":  # 只在动态那格标出每线程领到的工作量，显示"快者多劳"
+            for _, row in g.iterrows():
+                ax.text(row.end_us + 3, row.tid, f"{row.nnz / 1000:.0f}k", va="center",
+                        fontsize=6.5, color=INK2)
+        ax.set_xlim(0, xmax)
+        ax.set_ylim(p - 0.4, -0.6)
+        ax.set_yticks([0, 5, 10, 15])
+        ax.grid(axis="y", visible=False)
+        ax.set_title(f"{title}\n完成 {g.end_us.max():.0f} µs · λ = {lam:.2f}", loc="left",
+                     fontsize=8.5)
+        if i % 2 == 0:
+            ax.set_ylabel("线程号")
+        if i // 2 == 1:
+            ax.set_xlabel("调用内时间 (µs)")
+
+    ax_h = fig.add_subplot(gs[:, 2])
+    rates = d[d.cell == "omp2:"].rate
+    ax_h.hist(rates, bins=np.arange(300, 1800, 75), orientation="horizontal",
+              color=STYLE["omp2"]["color"], rwidth=0.85, zorder=3)
+    serial = pd.read_csv(RESULTS / "e1.csv")
+    serial = serial[(serial.config == "B") & (serial.strategy == "serial")]
+    serial_rate = serial.nnz.iloc[0] / (serial.median_ms.median() * 1e3)
+    ax_h.axhline(serial_rate, color=MUTED, linewidth=1, linestyle=(0, (4, 3)))
+    ax_h.text(ax_h.get_xlim()[1] * 0.97, serial_rate + 25, f"串行 {serial_rate:.0f}",
+              ha="right", fontsize=7.5, color=MUTED)
+    ax_h.axhline(rates.mean(), color=INK2, linewidth=1)
+    ax_h.text(ax_h.get_xlim()[1] * 0.97, rates.mean() + 25,
+              f"线程均值 {rates.mean():.0f}（{rates.mean() / serial_rate:.2f}×）",
+              ha="right", fontsize=7.5, color=INK2)
+    ax_h.grid(axis="y", visible=False)
+    ax_h.set_ylabel("每线程速度 (nnz/µs)")
+    ax_h.set_xlabel("线程数（10 轮合计）")
+    ax_h.set_title(f"nnz × 静态下每线程速度\n（工作量相同，速度分三档）", loc="left",
+                   fontsize=8.5)
+    fig.suptitle(f"E6：配置 B，p={p}，每线程忙碌区间（各取完成时间居中的一轮）",
+                 x=0.06, ha="left", fontsize=9.5)
+    save(fig, f"e6_timeline_p{p}")
+    return stats, rates.mean() / serial_rate
+
+
+def fig_e6_all():
+    rows = []
+    for p in (16, 20):
+        stats, ratio = fig_e6(p)
+        rows += [s + (ratio,) for s in stats]
+    pd.DataFrame(rows, columns=["cell", "threads", "lambda_median", "makespan_us_median",
+                                "mean_thread_rate_over_serial"]).to_csv(
+        RESULTS / "e6_summary.csv", index=False, float_format="%.3f")
+    print("已生成 results/e6_summary.csv")
+
+
+FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7, "e6": fig_e6_all}
 
 if __name__ == "__main__":
     names = sys.argv[1:] or list(FIGS)

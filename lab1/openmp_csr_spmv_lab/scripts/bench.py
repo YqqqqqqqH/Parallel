@@ -161,8 +161,13 @@ def exp_e4(rounds):
 
 def exp_e5(rounds):
     """种子鲁棒性：配置 A，20 个种子，p=8/16。"""
-    points = [({"config": "A"}, ["--seed", str(seed)], p, None)
+    points = [({"config": "A", "cell": "default"}, ["--seed", str(seed)], p, None)
               for seed in range(1, 21) for p in (8, 16)]
+    # std::thread 的时间被每次创建线程的开销（约 0.4 ms）主导，看不出分块不均的影响；
+    # 用分块方式完全相同、但没有创建开销的 omp1 static 作为"按行×静态"格子的对照
+    points += [({"config": "A", "cell": "row-static"},
+                ["--seed", str(seed), "--sched", "static", "--chunk", "0"], p, None, ["omp1"])
+               for seed in range(1, 21) for p in (8, 16)]
     return sweep(points, ["thread", "omp1", "omp2", "omp3"], rounds)
 
 
