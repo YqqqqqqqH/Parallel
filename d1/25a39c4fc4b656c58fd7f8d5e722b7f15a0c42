@@ -1,0 +1,40 @@
+lab1/openmp_csr_spmv_lab/results/bind.csv
+  s_f04013ee77069a::t_ea48c1e47b99a7 1
+  s_f04013ee77069a::t_9c811a474a27f3 2-361
+lab1/openmp_csr_spmv_lab/scripts/plot.py
+  s_f04013ee77069a::t_f909ca71afbb8e 1-127,129-150
+  s_f04013ee77069a::t_be4ac1b5cb1ccb 128
+lab1/实验计划.md
+  s_f04013ee77069a::t_a24c46df414cbc 18
+lab1/openmp_csr_spmv_lab/results/env.txt
+  s_f04013ee77069a::t_606971a41a4820 2,50,67-68
+lab1/openmp_csr_spmv_lab/scripts/env.sh
+  s_f04013ee77069a::t_606971a41a4820 16-18
+lab1/openmp_csr_spmv_lab/results/e1.csv
+  s_f04013ee77069a::t_827d562ffa375c 2-661
+  s_f04013ee77069a::t_36d7400ee9b525 1
+lab1/openmp_csr_spmv_lab/results/e1_summary.csv
+  s_f04013ee77069a::t_827d562ffa375c 2-65
+  s_f04013ee77069a::t_2d68ea6fc8c3ce 1
+lab1/openmp_csr_spmv_lab/scripts/bench.py
+  s_f04013ee77069a::t_827d562ffa375c 17,62-70,73-80,117-119
+  s_f04013ee77069a::t_5e226f6bb01a96 1-16,18-61,71-72,81-116,120-197
+lab1/openmp_csr_spmv_lab/实验日志.md
+  s_f04013ee77069a::t_0931b0aafa526a 1-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d125a39c4fc4b656c58fd7f8d5e722b7f15a0c42",
+  "prompts": {},
+  "sessions": {
+    "s_f04013ee77069a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1628b142-7969-4fa6-9bc6-22dafc955f84",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
