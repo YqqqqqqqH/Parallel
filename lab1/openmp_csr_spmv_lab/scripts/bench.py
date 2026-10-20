@@ -111,6 +111,19 @@ def exp_bind(rounds):
     return sweep(points, ["omp1", "omp2", "omp3"], rounds)
 
 
+def exp_wait(rounds):
+    """CP1 决定的对照：等待策略能否消除 p=24 的进程级双峰。
+
+    libgomp 默认先自旋一段时间再休眠；active 一直自旋；passive 立即休眠让出 CPU。
+    若双峰源于"OpenMP 线程占满 vCPU、后台进程抢时间片"，passive 应能显著缓解。
+    """
+    policies = {"default": {"OMP_WAIT_POLICY": None}, "active": {"OMP_WAIT_POLICY": "ACTIVE"},
+                "passive": {"OMP_WAIT_POLICY": "PASSIVE"}}
+    points = [({"config": c, "wait": name}, CONFIGS[c], p, env)
+              for c in ("A", "B") for name, env in policies.items() for p in (16, 20, 24)]
+    return sweep(points, ["omp1", "omp2", "omp3"], rounds)
+
+
 def exp_e1(rounds):
     """线程扩展性：配置 A、B，p = 1..24。"""
     points = [({"config": c}, CONFIGS[c], p, None) for c in ("A", "B") for p in THREADS]
@@ -161,10 +174,10 @@ def exp_e7(rounds):
 
 
 def exp_e6(rounds):
-    """每线程时间线：TRACE 构建，配置 B，p=16/24，四种策略格子。"""
+    """每线程时间线：TRACE 构建，配置 B，p=16/20（CP1：主结论只取到 p=20），四种策略格子。"""
     rows = []
     for rnd in range(rounds):
-        for p in (16, 24):
+        for p in (16, 20):
             for strategy, extra in (("omp1", ["--sched", "static", "--chunk", "0"]),
                                     ("omp1", ["--sched", "dynamic", "--chunk", "64"]),
                                     ("omp2", []), ("omp3", [])):
@@ -180,7 +193,7 @@ def exp_e6(rounds):
     return rows
 
 
-EXPERIMENTS = {"bind": exp_bind, "e1": exp_e1, "e2": exp_e2, "e3": exp_e3, "e4": exp_e4,
+EXPERIMENTS = {"bind": exp_bind, "wait": exp_wait, "e1": exp_e1, "e2": exp_e2, "e3": exp_e3, "e4": exp_e4,
                "e5": exp_e5, "e6": exp_e6, "e7": exp_e7}
 
 
