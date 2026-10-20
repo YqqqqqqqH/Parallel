@@ -315,7 +315,90 @@ def fig_e6_all():
     print("已生成 results/e6_summary.csv")
 
 
-FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7, "e6": fig_e6_all}
+# ---------------------------------------------------------------- E4 规模扫描
+SERIAL = dict(color=INK2, marker="x", label="串行（参照）")
+
+
+def fig_e4():
+    d = pd.read_csv(RESULTS / "e4.csv")
+    med = d.groupby(["rows_label", "strategy"]).median_ms.median().unstack()
+    nnz = d.groupby("rows_label").nnz.first()
+    mb = nnz * 12 / 1e6
+    cache = nnz.index[mb < 30]
+    fig, (ax_t, ax_b) = plt.subplots(1, 2, figsize=(9.4, 3.9))
+    for ax in (ax_t, ax_b):
+        ax.axvspan(30, mb.max() * 1.3, color="#f0efec", zorder=0, linewidth=0)
+    ax_t.plot(mb, med.serial, color=SERIAL["color"], marker="x", linewidth=1.5,
+              markersize=6, label=SERIAL["label"], zorder=3)
+    for key in ORDER:
+        line(ax_t, mb.values, med[key].values, key)
+    a_thread, a_omp = [np.polyfit(nnz[cache], med.loc[cache, k], 1)[1] for k in ("thread", "omp3")]
+    ax_t.annotate(f"std::thread 固定开销 α ≈ {a_thread * 1e3:.0f} µs\n（OpenMP 3：α ≈ {a_omp * 1e3:.0f} µs）",
+                  (mb.iloc[0], med.thread.iloc[0]), xytext=(mb.iloc[0] * 0.95, 3.0),
+                  color=INK2, fontsize=8,
+                  arrowprops=dict(arrowstyle="-", color=MUTED, linewidth=0.8))
+    ax_t.text(36, 14, "超出 30MB L3", color=MUTED, fontsize=7.5)
+    for ax in (ax_t, ax_b):
+        ax.set_xscale("log")
+        ax.set_xticks(mb.values)
+        ax.set_xticklabels([f"{v:.3g}" for v in mb.values], fontsize=7.5)
+        ax.minorticks_off()
+        ax.set_xlabel("矩阵数据量 (MB，12 B/nnz)")
+    ax_t.set_yscale("log")
+    ax_t.set_ylabel("中位数时间 (ms)")
+    ax_t.set_title("E4①：时间随规模变化（p=16，长行比例固定）", loc="left")
+    ax_t.legend(loc="lower right", fontsize=7.5)
+
+    bw = (nnz.values[:, None] * 12 / 1e9) / (med / 1e3)
+    ax_b.plot(mb, bw.serial, color=SERIAL["color"], marker="x", linewidth=1.5, markersize=6,
+              zorder=3)
+    for key in ORDER:
+        line(ax_b, mb.values, bw[key].values, key, label=False)
+    plateau = bw.loc[mb.index[mb > 100], "omp3"].mean()
+    ax_b.axhline(plateau, color=MUTED, linewidth=1, linestyle=(0, (1, 2)))
+    ax_b.text(1.2, plateau + 6, f"DRAM 区约 {plateau:.0f} GB/s：各策略收敛", color=MUTED,
+              fontsize=7.5)
+    ax_b.set_ylim(0, None)
+    ax_b.set_ylabel("有效带宽 (GB/s)")
+    ax_b.set_title("E4②：有效带宽（越过 L3 后被内存带宽封顶）", loc="left")
+    fig.tight_layout()
+    save(fig, "e4_scale")
+
+
+# ---------------------------------------------------------------- E5 种子鲁棒性
+def fig_e5():
+    d = pd.read_csv(RESULTS / "e5.csv")
+    d["key"] = np.where(d.cell == "row-static", "row-static", d.strategy)
+    fig, axes = plt.subplots(1, 2, figsize=(9.0, 3.5), sharey=True)
+    for ax, p in zip(axes, (8, 16)):
+        x = d[d.threads == p]
+        m = x.groupby(["seed", "key"]).median_ms.median().unstack()
+        imb = x.groupby("seed").static_imbalance.first()
+        for key, style_key, label in (("row-static", "thread", "按行 × 静态（omp1 static）"),
+                                      ("omp1", "omp1", STYLE["omp1"]["label"]),
+                                      ("omp2", "omp2", STYLE["omp2"]["label"]),
+                                      ("omp3", "omp3", STYLE["omp3"]["label"])):
+            s = STYLE[style_key]
+            ax.scatter(imb, m[key] * 1e3, s=26, color=s["color"], marker=s["marker"],
+                       edgecolors="white", linewidths=1.0, zorder=3,
+                       label=label if p == 8 else None)
+            cv = m[key].std() / m[key].mean() * 100
+            r = np.corrcoef(imb, m[key])[0, 1]
+            if key in ("row-static", "omp3"):
+                ax.text(imb.max() + 0.03, m[key].mean() * 1e3, f"CV {cv:.0f}%\nr={r:.2f}",
+                        fontsize=7.5, color=INK2, va="center")
+        ax.set_xlim(imb.min() - 0.08, imb.max() + 0.32)
+        ax.set_xlabel("预测的静态分块不均衡度（最重块 / 平均）")
+        ax.set_title(f"E5：20 个随机种子，配置 A，p={p}", loc="left")
+    axes[0].set_ylabel("中位数时间 (µs)")
+    axes[0].set_ylim(0, None)
+    fig.legend(loc="upper center", ncol=4, bbox_to_anchor=(0.5, 1.06), fontsize=8)
+    fig.tight_layout()
+    save(fig, "e5_seeds")
+
+
+FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7, "e4": fig_e4, "e5": fig_e5,
+        "e6": fig_e6_all}
 
 if __name__ == "__main__":
     names = sys.argv[1:] or list(FIGS)
