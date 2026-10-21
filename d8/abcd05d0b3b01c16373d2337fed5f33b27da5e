@@ -1,0 +1,27 @@
+lab1/openmp_csr_spmv_lab/实验日志.md
+  s_f04013ee77069a::t_6d95fee6902dc2 272-277
+  s_f04013ee77069a::t_1faea389a863c7 278-288
+lab1/openmp_csr_spmv_lab/report/report.md
+  s_f04013ee77069a::t_8c66676170656e 4,8,15-27,30-33,35-36,38-45,47,56,58,60-62,66,68,70,74,76,78,82,84,91,93,95-100,103,105-108,110,112,114-115,118,120,122,124-126,137,141,143,145,147,151,153
+  s_f04013ee77069a::t_c51dc3ae542bc6 1-3,5-7,9-14,28-29,34,37,46,48-55,57,59,63-65,67,69,71-73,75,77,79-81,83,85-90,92,94,101-102,104,109,111,113,116-117,119,121,123,127-136,138-140,142,144,146,148-150,152,154-223
+lab1/openmp_csr_spmv_lab/results/correctness_run.txt
+  s_f04013ee77069a::t_ef671e13e67888 1-25
+lab1/openmp_csr_spmv_lab/report/build.sh
+  s_f04013ee77069a::t_56328eb77d1cf5 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d8abcd05d0b3b01c16373d2337fed5f33b27da5e",
+  "prompts": {},
+  "sessions": {
+    "s_f04013ee77069a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1628b142-7969-4fa6-9bc6-22dafc955f84",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
