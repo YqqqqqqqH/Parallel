@@ -1,0 +1,25 @@
+$ ./csr_spmv_lab --threads 16 --repeats 10
+CSR SpMV skewed-matrix experiment
+rows=10000, cols=100000, nnz=958976, long_rows=32, long_nnz=20000, seed=20260926, requested_threads=16
+OpenMP enabled, _OPENMP=201511, omp1 schedule=dynamic,64, omp3 nnz-chunk=4096
+structure: max_row_nnz=20000, row-level speedup ceiling W/L=47.95, static block imbalance(p=16)=1.666
+strategy                        median_ms     min_ms     max_ms   max_abs_err
+serial                              0.535      0.480      1.026             0
+std::thread (row block)             0.958      0.682      1.164             0
+OpenMP 1 row/dynamic,64             0.118      0.083      0.374             0
+OpenMP 2 nnz/static                 0.116      0.112      0.198      3.06e-13
+OpenMP 3 nnz/dynamic,4096           0.059      0.058      0.075      1.31e-12
+All correctness checks passed.
+
+$ ./csr_spmv_lab --rows 20000 --cols 200000 --normal-nnz 16 --long-rows 16 --long-nnz 80000 --threads 16 --repeats 10
+CSR SpMV skewed-matrix experiment
+rows=20000, cols=200000, nnz=1599744, long_rows=16, long_nnz=80000, seed=20260926, requested_threads=16
+OpenMP enabled, _OPENMP=201511, omp1 schedule=dynamic,64, omp3 nnz-chunk=4096
+structure: max_row_nnz=80000, row-level speedup ceiling W/L=20, static block imbalance(p=16)=1.8
+strategy                        median_ms     min_ms     max_ms   max_abs_err
+serial                              1.250      1.049      1.392             0
+std::thread (row block)             1.283      1.032      1.750             0
+OpenMP 1 row/dynamic,64             0.228      0.183      0.632             0
+OpenMP 2 nnz/static                 0.220      0.207      0.407      2.22e-12
+OpenMP 3 nnz/dynamic,4096           0.146      0.130      0.308      1.73e-12
+All correctness checks passed.
