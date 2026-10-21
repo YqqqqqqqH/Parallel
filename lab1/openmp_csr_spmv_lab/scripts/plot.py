@@ -397,8 +397,30 @@ def fig_e5():
     save(fig, "e5_seeds")
 
 
+# ---------------------------------------------------------------- p=24 双峰与上下文切换
+def fig_p24():
+    d = pd.read_csv(RESULTS / "perf_p24.csv")
+    fig, ax = plt.subplots(figsize=(5.2, 3.4))
+    for p, color, marker, label in ((20, MUTED, "o", "p=20（留 4 个 vCPU 给系统）"),
+                                    (24, STYLE["omp3"]["color"], "^", "p=24（占满全部 vCPU）")):
+        x = d[d.threads == p]
+        ax.scatter(x["context-switches"], x.median_ms * 1e3, s=40, color=color, marker=marker,
+                   edgecolors="white", linewidths=1.2, zorder=3, label=label)
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel("单个进程内的上下文切换次数（200 次调用）")
+    ax.set_ylabel("该进程的中位数时间 (µs)")
+    ax.set_title("OpenMP 3，配置 B：慢进程都伴随大量上下文切换", loc="left")
+    ax.legend(loc="upper left", fontsize=8)
+    ax.minorticks_off()
+    ax.set_yticks([100, 300, 1000, 2000])
+    ax.set_yticklabels(["100", "300", "1000", "2000"])
+    fig.tight_layout()
+    save(fig, "p24_preemption")
+
+
 FIGS = {"e1": fig_e1, "e2": fig_e2, "e3_e7": fig_e3_e7, "e4": fig_e4, "e5": fig_e5,
-        "e6": fig_e6_all}
+        "e6": fig_e6_all, "p24": fig_p24}
 
 if __name__ == "__main__":
     names = sys.argv[1:] or list(FIGS)
