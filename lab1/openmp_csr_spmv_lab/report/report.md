@@ -67,7 +67,7 @@ header-includes:
 
 **公平性**：每个策略单独开一个进程运行（新增 `--only` 选项），每个点跑 10 轮。进程内先调用一次作为 warm-up 并做正确性检查，再计时 10 次取中位数；报告中的数值是 10 个进程中位数的中位数。加速比统一为 $T_1/T_p$，$T_1$ 取 `spmv_serial` 的时间。*踩过的坑*：第一版把串行任务集中放在最后跑，芯片已经发热、睿频下降，$T_1$ 被高估约 20%，效率超过 1；改为每轮把全部任务用固定种子随机打乱后，问题消失。
 
-**正确性（E0）**：覆盖线程数 {1,2,3,4,7,8,13,16,24} × 3 个种子 × 10 类矩阵，包括无长行、普通行为空、全空、全是长行、单行、nnz 少于线程数，以及块大小为 1 或超过 nnz 等边界；另用 ASan/UBSan 构建跑了一个子集。共 527 次运行，全部通过。按行切分的策略与串行结果逐位相同；按非零元切分的最大绝对误差为 1.6e-12，约为容差的 1/400。测试中还发现 starter 的测试框架有一个隐患：各策略共用同一个输出数组，漏写的行会沿用上一个策略的正确值而通过检查。现在每个策略检查前先把输出填成 1e300（不能用 NaN：`NaN > tol` 为假，检查反而会放过错误）；`check_result` 没有改动。运行截图见附录 F。
+**正确性（E0）**：覆盖线程数 {1,2,3,4,7,8,13,16,24} × 3 个种子 × 10 类矩阵，包括无长行、普通行为空、全空、全是长行、单行、nnz 少于线程数，以及块大小为 1 或超过 nnz 等边界；另用 ASan/UBSan 构建跑了一个子集。共 527 次运行，全部通过。按行切分的策略与串行结果逐位相同；按非零元切分的最大绝对误差为 1.6e-12，约为容差的 1/400。测试中还发现 starter 的测试框架有一个隐患：各策略共用同一个输出数组，漏写的行会沿用上一个策略的正确值而通过检查。现在每个策略检查前先把输出填成 1e300（不能用 NaN：`NaN > tol` 为假，检查反而会放过错误）；`check_result` 没有改动。运行截图见附录 F，文字记录见仓库中的 `results/e0_correctness.txt`（527 次 E0 运行的汇总）和 `results/correctness_run.txt`（默认配置与配置 B 的完整输出）。
 
 # 3　验证预测
 
@@ -148,7 +148,7 @@ OpenMP 线程完成工作后自旋等待，所以 CPU 利用率接近 p，负载
 
 # 7　AI 使用声明与参考资料
 
-**AI 使用声明。** 本实验使用了 Claude（Anthropic 公司，通过 Claude Code 使用 Claude Opus 5.5 模型），用于实现三个 OpenMP 策略和驱动扩展（`--only`、`--csv`、TRACE 插桩等），编写正确性测试、实验网格、绘图和 perf 脚本并运行实验，以及起草本报告。方案决策由本人在三个检查点作出：CP1 保留 2×2 设计，p=24 先做 PASSIVE 对照，主结论只取到 p=20；CP2 选定 OpenMP 1 用 `dynamic,64`、OpenMP 3 块大小用 4096；CP3 以 OpenMP 3 为最终方案，报告采用"预测→验证"主线。数据均可由仓库中的脚本和 `results/*.csv` 复现，并已由本人核对。对话截图见附录 G。心路历程报告由本人独立撰写。
+**AI 使用声明。** 本实验使用了 Claude（Anthropic 公司，通过 Claude Code 使用 Claude Opus 5.5 模型），用于实现三个 OpenMP 策略和驱动扩展（`--only`、`--csv`、TRACE 插桩等），编写正确性测试、实验网格、绘图和 perf 脚本并运行实验，以及起草本报告。方案决策由本人在三个检查点作出：CP1 保留 2×2 设计，p=24 先做 PASSIVE 对照，主结论只取到 p=20；CP2 选定 OpenMP 1 用 `dynamic,64`、OpenMP 3 块大小用 4096；CP3 以 OpenMP 3 为最终方案，报告采用"预测→验证"主线。数据均可由仓库中的脚本和 `results/*.csv` 复现，并已由本人核对。心路历程报告由本人独立撰写。
 
 **参考资料**：[1] OpenMP API Specifications, <https://www.openmp.org/specifications/>；[2] GNU libgomp 手册（`OMP_WAIT_POLICY`、`OMP_PROC_BIND`、`OMP_PLACES`），<https://gcc.gnu.org/onlinedocs/libgomp/>；[3] D. Merrill, M. Garland. Merge-Based Parallel Sparse Matrix-Vector Multiplication. SC'16, <https://doi.org/10.1109/SC.2016.57>；[4] R. L. Graham. Bounds on Multiprocessing Timing Anomalies. SIAM J. Appl. Math., 1969, <https://doi.org/10.1137/0117039>；[5] Linux 内核文档 Perf events and tool security，<https://www.kernel.org/doc/html/latest/admin-guide/perf-security.html>；[6] Intel ARK：i7-14650HX 规格，<https://ark.intel.com>。
 
@@ -216,8 +216,4 @@ python scripts/plot.py                            # 生成全部图表
 
 ## F　正确性运行截图
 
-（此处插入本人终端运行 `./csr_spmv_lab --threads 16` 的截图，文字版见 `results/correctness_run.txt`。）
-
-## G　AI 对话截图
-
-（此处插入与 Claude 的对话截图。）
+![默认配置、p=16 的运行输出：串行、std::thread 和三个 OpenMP 策略都通过 `check_result`（末行 All correctness checks passed）。按行切分的策略误差为 0，按非零元切分的 OpenMP 2、3 最大绝对误差分别为 3.06e-13 和 1.31e-12。](../figures/correct.png){width=88%}
