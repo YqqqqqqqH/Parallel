@@ -1,0 +1,26 @@
+lab1/openmp_csr_spmv_lab/report/report.md
+  s_b14d2e11859670::t_1efaecf57478de 219
+  s_b14d2e11859670::t_af51371e792e34 151
+  s_b14d2e11859670::t_d1472018a4baad 70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "38de8dca594581a8c62ec5d57116e0045367deb9",
+  "prompts": {},
+  "humans": {
+    "h_c67202724abd74": {
+      "author": "Felix-Yang887 <felix@example.com>"
+    }
+  },
+  "sessions": {
+    "s_b14d2e11859670": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c3a7c7ef-96ba-4e4c-aae9-baa7365a4ed7",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
