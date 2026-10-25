@@ -1,0 +1,42 @@
+lab2/实验计划.md
+  s_84e0852a767408::t_72689d1730d02e 1-174
+lab2/scripts/xsim.py
+  s_84e0852a767408::t_a5fd3518750d40 1-115
+lab2/src/alu.v
+  s_84e0852a767408::t_9f7a43aed4b0ed 1-143
+lab2/scripts/sim.tcl
+  s_84e0852a767408::t_1afa1216c9e139 1-4
+lab2/sim/tb_monitor.v
+  s_84e0852a767408::t_309acfff5ccf15 1-39
+lab2/results/sim/official.log
+  s_84e0852a767408::t_8b106eb0d4a05a 1-59
+lab2/实验日志.md
+  s_84e0852a767408::t_a47235c52e31a7 1-31
+lab2/.gitignore
+  s_84e0852a767408::t_97a4aaae7cded6 1-3
+lab2/alu_tb.v
+  s_84e0852a767408::t_06b096caa00dd3 1-173
+lab2/实验指导.md
+  s_84e0852a767408::t_5c2950fb9a93b4 1-203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "70e2dde806f69000edc46ecc22886cd89780d078",
+  "prompts": {},
+  "humans": {
+    "h_c67202724abd74": {
+      "author": "Felix-Yang887 <felix@example.com>"
+    }
+  },
+  "sessions": {
+    "s_84e0852a767408": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0ca98b4d-2a7d-4742-9b02-dc5eb01bec82",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
