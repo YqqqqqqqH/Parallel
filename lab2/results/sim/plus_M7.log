@@ -1,0 +1,69 @@
+===== xvlog alu.v alu_tb_plus.v (rc=0)
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado_proj/lab2_alu/batch/plus_M7/alu.v" into library work
+INFO: [VRFC 10-311] analyzing module cla4
+INFO: [VRFC 10-311] analyzing module cla_unit4
+INFO: [VRFC 10-311] analyzing module cla16
+INFO: [VRFC 10-311] analyzing module cla32
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado_proj/lab2_alu/batch/plus_M7/alu_tb_plus.v" into library work
+INFO: [VRFC 10-311] analyzing module alu_tb_plus
+
+===== xelab -debug typical -s snap alu_tb_plus (rc=0)
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: E:/Xilinx_Vivado_SDK_2018.3_1207_2324/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -debug typical -s snap alu_tb_plus 
+Multi-threading is on. Using 22 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ns
+Compiling module work.cla4
+Compiling module work.cla_unit4
+Compiling module work.cla16
+Compiling module work.cla32
+Compiling module work.alu
+Compiling module work.alu_tb_plus
+Built simulation snapshot snap
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source E:/vivado_proj/lab2_alu/batch/plus_M7/xsim.dir/snap/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Oct 25 18:10:30 2026...
+
+===== xsim snap -tclbatch run.tcl (rc=0)
+
+****** xsim v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -autoloadwcfg -tclbatch {run.tcl}
+Vivado Simulator 2018.3
+Time resolution is 1 ns
+source run.tcl
+## run all
+MISMATCH class=0 t=227 op=100001 A=00000001 B=7fffffff C=80000000 Over=1 expC=80000000 expOver=0
+MISMATCH class=0 t=247 op=100001 A=00000002 B=7fffffff C=80000001 Over=1 expC=80000001 expOver=0
+MISMATCH class=0 t=263 op=100001 A=7fffffff B=00000001 C=80000000 Over=1 expC=80000000 expOver=0
+MISMATCH class=0 t=265 op=100001 A=7fffffff B=00000002 C=80000001 Over=1 expC=80000001 expOver=0
+MISMATCH class=0 t=267 op=100001 A=7fffffff B=7fffffff C=fffffffe Over=1 expC=fffffffe expOver=0
+MISMATCH class=0 t=277 op=100001 A=7fffffff B=55555555 C=d5555554 Over=1 expC=d5555554 expOver=0
+MISMATCH class=0 t=289 op=100001 A=80000000 B=80000000 C=00000000 Over=1 expC=00000000 expOver=0
+MISMATCH class=0 t=291 op=100001 A=80000000 B=80000001 C=00000001 Over=1 expC=00000001 expOver=0
+MISMATCH class=0 t=293 op=100001 A=80000000 B=fffffffe C=7ffffffe Over=1 expC=7ffffffe expOver=0
+MISMATCH class=0 t=295 op=100001 A=80000000 B=ffffffff C=7fffffff Over=1 expC=7fffffff expOver=0
+PLUS class=corner errors=46
+PLUS class=carry errors=315
+PLUS class=shamt errors=0
+PLUS class=random errors=10031
+PLUS class=undef errors=0
+PLUS_TOTAL vectors=226744 errors=10392
+PLUS RESULT FAIL
+$finish called at time : 453488 ns : File "E:/vivado_proj/lab2_alu/batch/plus_M7/alu_tb_plus.v" Line 149
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Oct 25 18:10:36 2026...
