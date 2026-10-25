@@ -1,0 +1,36 @@
+lab2/report/截图清单.md
+  s_84e0852a767408::t_e5088fe734e305 1-36
+lab2/report/build.sh
+  s_84e0852a767408::t_d7f030483583ea 1-6
+lab2/report/report.md
+  s_84e0852a767408::t_0eb4b19230e9fc 98-100
+  s_84e0852a767408::t_a91c7b89fad43b 134
+  s_84e0852a767408::t_d7f030483583ea 1-29
+  s_84e0852a767408::t_59bf2ef459aa6e 36,63-64,66,76,92,104,131,150
+  s_84e0852a767408::t_a53cc350c6e248 43
+  s_84e0852a767408::t_ba2a0eec2f18b7 30-35,37-42,44-62,65,67-75,77,83-91,93-97,101-103,105-130,132-133,135-149,151-212
+  s_84e0852a767408::t_4b1043c05600f4 78-82
+lab2/实验日志.md
+  s_84e0852a767408::t_185feec5c704f5 117-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "37375c7efec8de2af171247a571f51d05640d7f6",
+  "prompts": {},
+  "humans": {
+    "h_c67202724abd74": {
+      "author": "Felix-Yang887 <felix@example.com>"
+    }
+  },
+  "sessions": {
+    "s_84e0852a767408": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0ca98b4d-2a7d-4742-9b02-dc5eb01bec82",
+        "model": "unknown"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
