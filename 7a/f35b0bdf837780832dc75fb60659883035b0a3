@@ -1,0 +1,41 @@
+lab2/openmp_ivf_lab/ivf_io.cpp
+  s_f8ff378ef2e236::t_4fd5975d228435 1-104
+lab2/openmp_ivf_lab/ivf_student.cpp
+  s_f8ff378ef2e236::t_4fd5975d228435 1-22
+lab2/openmp_ivf_lab/ivf_search.h
+  s_f8ff378ef2e236::t_4fd5975d228435 1-58
+lab2/openmp_ivf_lab/README.md
+  s_f8ff378ef2e236::t_4fd5975d228435 1-115
+lab2/openmp_ivf_lab/openmp_ivf_topk_lab.md
+  s_f8ff378ef2e236::t_4fd5975d228435 1-199
+lab2/openmp_ivf_lab/Makefile
+  s_f8ff378ef2e236::t_4fd5975d228435 1-21
+lab2/openmp_ivf_lab/ivf_lab.cpp
+  s_f8ff378ef2e236::t_4fd5975d228435 1-177
+lab2/openmp_ivf_lab/tests/ivf_tests.cpp
+  s_f8ff378ef2e236::t_4fd5975d228435 1-164
+lab2/.gitignore
+  s_f8ff378ef2e236::t_78e4e4cc39e1b0 1-6
+lab2/openmp_ivf_lab/ivf_io.h
+  s_f8ff378ef2e236::t_4fd5975d228435 1-48
+lab2/openmp_ivf_lab/ivf_search.cpp
+  s_f8ff378ef2e236::t_4fd5975d228435 1-113
+lab2/实验计划.md
+  s_f8ff378ef2e236::t_2e826b3627ef4d 1-259
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7af35b0bdf837780832dc75fb60659883035b0a3",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
