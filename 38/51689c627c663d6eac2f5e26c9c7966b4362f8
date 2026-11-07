@@ -1,0 +1,88 @@
+lab2/openmp_ivf_lab/results/C_summary.csv
+  s_f8ff378ef2e236::t_d0d025de87db2b 1-13
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b1024_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b64_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/scripts/model_B.py
+  s_f8ff378ef2e236::t_59d0a8e5ad8667 1-69
+lab2/openmp_ivf_lab/results/.run_BC.log
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 17-115
+  s_f8ff378ef2e236::t_ab6853905c5bb8 1-16
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b64_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b64_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b1024_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b1024_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b64_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/scripts/summarize.py
+  s_f8ff378ef2e236::t_4c001dfea48b0b 25,39-42,46-47,55
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b1024_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/C.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-361
+lab2/openmp_ivf_lab/results/B_stats_summary.csv
+  s_f8ff378ef2e236::t_daad0362b44d78 1-19
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b1024_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/scripts/bench.py
+  s_f8ff378ef2e236::t_f57373f7756def 34
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b1024_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b64_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b64_asc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/C_cutoff.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-151
+lab2/openmp_ivf_lab/scripts/plot.py
+  s_f8ff378ef2e236::t_87a8484abdfc58 132-133,135-138,142,144-146
+  s_f8ff378ef2e236::t_551913527258d7 139-140
+  s_f8ff378ef2e236::t_3645eab21a669c 123-131,134,141,143,147-154
+lab2/openmp_ivf_lab/实验日志.md
+  s_f8ff378ef2e236::t_f57373f7756def 195-199
+  s_f8ff378ef2e236::t_dfc0384bea5065 200-270
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b64_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/C_cutoff_summary.csv
+  s_f8ff378ef2e236::t_d0d025de87db2b 1-6
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b64_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b64_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_static_b1024_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp2_task_b1024_orig.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/stats/B_omp1_dynamic1_b1024_desc.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 1-49
+lab2/openmp_ivf_lab/results/B.csv
+  s_f8ff378ef2e236::t_9dfd8c9e3a3e57 162-631
+  s_f8ff378ef2e236::t_968cb355803ad8 1-161
+lab2/openmp_ivf_lab/results/B_summary.csv
+  s_f8ff378ef2e236::t_d0d025de87db2b 1-22
+lab2/openmp_ivf_lab/results/B_model.csv
+  s_f8ff378ef2e236::t_814f57511c026e 1-13
+lab2/openmp_ivf_lab/scripts/stats_B.sh
+  s_f8ff378ef2e236::t_53c3dd961b48f1 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3851689c627c663d6eac2f5e26c9c7966b4362f8",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
