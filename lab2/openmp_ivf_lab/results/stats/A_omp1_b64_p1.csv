@@ -1,0 +1,4 @@
+strategy,threads,batch,grain,order,repeat,tid,candidates,tasks,busy_ms,select_ms,scan_ms,merge_ms
+omp1,1,64,1024,orig,1,0,2284819,1024,390.397668,230.066188,160.33148,0
+omp1,1,64,1024,orig,2,0,2284819,1024,379.775723,228.860145,150.915578,0
+omp1,1,64,1024,orig,3,0,2284819,1024,380.214007,227.929061,152.284946,0

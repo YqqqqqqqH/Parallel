@@ -1,0 +1,6 @@
+profile nprobe=1 queries=1024 C(q)[median/p95/max/mean]=247.000/531.000/1255.000/282.355
+select_us_total=223628.053 scan_us_total=17706.871 f_sel=0.927
+profile nprobe=8 queries=1024 C(q)[median/p95/max/mean]=2015.000/3772.000/5704.000/2231.269
+select_us_total=224671.677 scan_us_total=135688.760 f_sel=0.623
+profile nprobe=32 queries=1024 C(q)[median/p95/max/mean]=8132.000/13648.000/16022.000/8761.614
+select_us_total=231629.151 scan_us_total=542462.534 f_sel=0.299

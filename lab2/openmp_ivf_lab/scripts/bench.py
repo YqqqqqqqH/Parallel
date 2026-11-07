@@ -53,6 +53,16 @@ def exp_A():  # 线程数：batch=1 与 batch=4P，标量距离
     return cfgs
 
 
+def exp_A_wait():  # batch=1 时 omp2 比串行慢的原因：自旋等待 vs 任务落在哪个线程
+    cfgs = []
+    for p in (1, 2, 16):
+        for policy in ("", "OMP_WAIT_POLICY=passive"):
+            cfgs.append(c("omp2", threads=p, batch=1, grain=4096, env=policy))
+            cfgs.append(c("omp2", threads=p, batch=1, grain=GRAIN[1], env=policy))
+    cfgs.append(c("serial", batch=1))
+    return cfgs
+
+
 def exp_A_sched():  # omp1 调度消融
     return [c("omp1", threads=P, batch=BIG, sched=s)
             for s in ("static", "dynamic:1", "dynamic:4", "guided")]
@@ -112,14 +122,14 @@ def exp_F():  # std::thread 与 omp1-static（相同划分）
     return cfgs
 
 
-EXPERIMENTS = {"A": exp_A, "A_sched": exp_A_sched, "B": exp_B, "C": exp_C,
+EXPERIMENTS = {"A": exp_A, "A_sched": exp_A_sched, "A_wait": exp_A_wait, "B": exp_B, "C": exp_C,
                "C_cutoff": exp_C_cutoff, "D": exp_D, "E": exp_E, "F": exp_F}
 
 
 def to_args(cfg):
     args = []
     for key, value in cfg.items():
-        if key == "bin":
+        if key in ("bin", "env"):
             continue
         args += [f"--{key}", str(value)]
     return args
@@ -128,7 +138,11 @@ def to_args(cfg):
 def run(cfg, tmp_csv):
     binary = cfg.get("bin", "./ivf_lab")
     cmd = [binary, *DATA_ARGS, *to_args(cfg), "--csv", tmp_csv]
-    proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+    env = dict(os.environ)
+    for item in filter(None, cfg.get("env", "").split(";")):  # 形如 "OMP_WAIT_POLICY=passive;X=1"
+        key, value = item.split("=", 1)
+        env[key] = value
+    proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, env=env)
     if proc.returncode != 0:
         sys.stderr.write(proc.stdout + proc.stderr)
         raise SystemExit(f"运行失败：{' '.join(cmd)}")
@@ -165,7 +179,8 @@ def main():
                 cfg = dict(cfg, repeats=args.repeats)
                 rows, stdout = run(cfg, tmp_csv)
                 for row in rows:
-                    row.update(exp=args.exp, round=r, bin=cfg.get("bin", "./ivf_lab"))
+                    row.update(exp=args.exp, round=r, bin=cfg.get("bin", "./ivf_lab"),
+                               env=cfg.get("env", ""))
                     if writer is None:
                         writer = csv.DictWriter(out, fieldnames=list(row))
                         if mode == "w":
@@ -174,7 +189,7 @@ def main():
                 out.flush()
                 summary = stdout.strip().splitlines()[-2]
                 print(f"[{args.exp} r{r} {i}/{len(order)} {time.time() - start:6.0f}s] "
-                      f"{' '.join(to_args(cfg))} | {summary}", flush=True)
+                      f"{cfg.get('env', '')} {' '.join(to_args(cfg))} | {summary}", flush=True)
     finally:
         if out:
             out.close()
