@@ -1,0 +1,23 @@
+perf_event_paranoid=1
+{'config': 'serial', 'round': 1, 'wall_ms': 3879.781, 'cpu_util': 1.0, 'task_clock_us_per_query': 378.93, 'context-switches_per_call': 0.0437, 'page-faults_per_call': 0.0187, 'cycles': '<not supported>'}
+{'config': 'omp1', 'round': 1, 'wall_ms': 516.974, 'cpu_util': 16.037, 'task_clock_us_per_query': 809.65, 'context-switches_per_call': 0.125, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2', 'round': 1, 'wall_ms': 705.406, 'cpu_util': 16.03, 'task_clock_us_per_query': 1104.27, 'context-switches_per_call': 0.1313, 'page-faults_per_call': 0.0437, 'cycles': '<not supported>'}
+{'config': 'std', 'round': 1, 'wall_ms': 711.483, 'cpu_util': 10.5, 'task_clock_us_per_query': 729.58, 'context-switches_per_call': 5.0687, 'page-faults_per_call': 22.0188, 'cycles': '<not supported>'}
+{'config': 'omp1_static', 'round': 1, 'wall_ms': 601.233, 'cpu_util': 15.736, 'task_clock_us_per_query': 923.92, 'context-switches_per_call': 0.0187, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2_b1', 'round': 1, 'wall_ms': 4379.809, 'cpu_util': 15.834, 'task_clock_us_per_query': 6772.6, 'context-switches_per_call': 0.0141, 'page-faults_per_call': 0.0036, 'cycles': '<not supported>'}
+{'config': 'omp2_b1_passive', 'round': 1, 'wall_ms': 6250.154, 'cpu_util': 1.679, 'task_clock_us_per_query': 1024.89, 'context-switches_per_call': 58.0171, 'page-faults_per_call': 0.0035, 'cycles': '<not supported>'}
+{'config': 'serial', 'round': 2, 'wall_ms': 3877.813, 'cpu_util': 0.999, 'task_clock_us_per_query': 378.34, 'context-switches_per_call': 0.0437, 'page-faults_per_call': 0.0187, 'cycles': '<not supported>'}
+{'config': 'omp1', 'round': 2, 'wall_ms': 543.094, 'cpu_util': 16.093, 'task_clock_us_per_query': 853.5, 'context-switches_per_call': 0.125, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2', 'round': 2, 'wall_ms': 548.798, 'cpu_util': 16.01, 'task_clock_us_per_query': 858.05, 'context-switches_per_call': 14.4062, 'page-faults_per_call': 0.0187, 'cycles': '<not supported>'}
+{'config': 'std', 'round': 2, 'wall_ms': 656.247, 'cpu_util': 11.151, 'task_clock_us_per_query': 714.6, 'context-switches_per_call': 5.6437, 'page-faults_per_call': 22.0125, 'cycles': '<not supported>'}
+{'config': 'omp1_static', 'round': 2, 'wall_ms': 563.992, 'cpu_util': 16.16, 'task_clock_us_per_query': 890.05, 'context-switches_per_call': 0.0625, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2_b1', 'round': 2, 'wall_ms': 4083.506, 'cpu_util': 16.244, 'task_clock_us_per_query': 6477.73, 'context-switches_per_call': 0.0078, 'page-faults_per_call': 0.0036, 'cycles': '<not supported>'}
+{'config': 'omp2_b1_passive', 'round': 2, 'wall_ms': 6166.308, 'cpu_util': 1.726, 'task_clock_us_per_query': 1039.34, 'context-switches_per_call': 58.0246, 'page-faults_per_call': 0.0034, 'cycles': '<not supported>'}
+{'config': 'serial', 'round': 3, 'wall_ms': 3892.931, 'cpu_util': 0.995, 'task_clock_us_per_query': 378.31, 'context-switches_per_call': 0.0813, 'page-faults_per_call': 0.0187, 'cycles': '<not supported>'}
+{'config': 'omp1', 'round': 3, 'wall_ms': 1159.017, 'cpu_util': 15.833, 'task_clock_us_per_query': 1792.01, 'context-switches_per_call': 0.575, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2', 'round': 3, 'wall_ms': 514.858, 'cpu_util': 15.996, 'task_clock_us_per_query': 804.28, 'context-switches_per_call': 0.1187, 'page-faults_per_call': 0.0187, 'cycles': '<not supported>'}
+{'config': 'std', 'round': 3, 'wall_ms': 593.328, 'cpu_util': 10.973, 'task_clock_us_per_query': 635.81, 'context-switches_per_call': 5.5, 'page-faults_per_call': 22.0188, 'cycles': '<not supported>'}
+{'config': 'omp1_static', 'round': 3, 'wall_ms': 557.423, 'cpu_util': 16.062, 'task_clock_us_per_query': 874.32, 'context-switches_per_call': 0.1062, 'page-faults_per_call': 0.0125, 'cycles': '<not supported>'}
+{'config': 'omp2_b1', 'round': 3, 'wall_ms': 4367.592, 'cpu_util': 15.971, 'task_clock_us_per_query': 6812.04, 'context-switches_per_call': 0.0107, 'page-faults_per_call': 0.0032, 'cycles': '<not supported>'}
+{'config': 'omp2_b1_passive', 'round': 3, 'wall_ms': 6082.583, 'cpu_util': 1.667, 'task_clock_us_per_query': 990.21, 'context-switches_per_call': 58.118, 'page-faults_per_call': 0.0033, 'cycles': '<not supported>'}
+写入 /home/felix/Parallel/Lab/.claude/worktrees/lab2-experiment-plan-951825/lab2/openmp_ivf_lab/results/perf_main_paranoid1.csv

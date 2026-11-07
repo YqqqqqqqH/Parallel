@@ -11,7 +11,8 @@
   每查询 task-clock、每次调用的上下文切换 / 迁移 / 缺页
 不支持的硬件事件（WSL2 不暴露 PMU）照原样记录为 <not supported>。
 
-用法：python -I scripts/perf_ctl.py [--rounds 3]
+用法：python -I scripts/perf_ctl.py [--rounds 3] [--tag paranoid1]
+输出 results/perf_main_<tag>.csv，原始输出在 results/perf_raw/<tag>/。
 """
 import argparse
 import csv
@@ -93,8 +94,11 @@ def run(name, cfg, env_str, rnd, raw_dir, fifo_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--rounds", type=int, default=3)
+    ap.add_argument("--tag", default=None, help="默认取 paranoid<当前值>")
     args = ap.parse_args()
-    raw_dir = os.path.join(ROOT, "results", "perf_raw")
+    with open("/proc/sys/kernel/perf_event_paranoid") as f:
+        tag = args.tag or f"paranoid{f.read().strip()}"
+    raw_dir = os.path.join(ROOT, "results", "perf_raw", tag)
     os.makedirs(raw_dir, exist_ok=True)
     with open("/proc/sys/kernel/perf_event_paranoid") as f:
         paranoid = f.read().strip()
@@ -109,7 +113,7 @@ def main():
                 print({k: rec[k] for k in ("config", "round", "wall_ms", "cpu_util",
                                            "task_clock_us_per_query", "context-switches_per_call",
                                            "page-faults_per_call", "cycles") if k in rec}, flush=True)
-    out = os.path.join(ROOT, "results", "perf_main.csv")
+    out = os.path.join(ROOT, "results", f"perf_main_{tag}.csv")
     fields = sorted({k for r in records for k in r}, key=lambda k: list(records[0]).index(k)
                     if k in records[0] else 999)
     with open(out, "w", newline="") as f:

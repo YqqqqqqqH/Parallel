@@ -1,0 +1,23 @@
+$ make && make student_test
+PASS: 8950 student configurations match the serial reference
+$ ./ivf_lab --mode check --queries 1024 --only serial
+N=1000000 dim=128 nlist=4096 strategy=serial threads=1 dist=scalar isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only omp1 --threads 16 --batch 64 --sched dynamic:1 --dist simd32
+N=1000000 dim=128 nlist=4096 strategy=omp1 threads=16 dist=simd32 isa=default sched=dynamic:1 coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only omp2 --threads 16 --batch 1 --grain 128
+N=1000000 dim=128 nlist=4096 strategy=omp2 threads=16 dist=scalar isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only omp2 --threads 16 --batch 1 --grain 128 --coarse split
+N=1000000 dim=128 nlist=4096 strategy=omp2 threads=16 dist=scalar isa=default sched=static coarse=split cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only omp2 --threads 16 --batch 64 --grain 1024 --dist simd32
+N=1000000 dim=128 nlist=4096 strategy=omp2 threads=16 dist=simd32 isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only std --threads 16 --batch 64
+N=1000000 dim=128 nlist=4096 strategy=std threads=16 dist=scalar isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.696875
+$ ./ivf_lab --mode check --queries 1024 --only exact --queries 8 --batch 1
+N=1000000 dim=128 nlist=4096 strategy=exact threads=1 dist=scalar isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=1.000000

@@ -1,0 +1,22 @@
+config,env,round,wall_ms,calls,queries,task-clock,context-switches,cpu-migrations,page-faults,cycles,instructions,cache-misses,branch-misses,cpu_util,task_clock_us_per_query,context-switches_per_call,cpu-migrations_per_call,page-faults_per_call,paranoid
+serial,,1,3879.781,160,10240,3880.22,7,0,3,<not supported>,<not supported>,<not supported>,<not supported>,1.0,378.93,0.0437,0.0,0.0187,1
+omp1,,1,516.974,160,10240,8290.84,20,0,2,<not supported>,<not supported>,<not supported>,<not supported>,16.037,809.65,0.125,0.0,0.0125,1
+omp2,,1,705.406,160,10240,11307.73,21,0,7,<not supported>,<not supported>,<not supported>,<not supported>,16.03,1104.27,0.1313,0.0,0.0437,1
+std,,1,711.483,160,10240,7470.90,811,95,3523,<not supported>,<not supported>,<not supported>,<not supported>,10.5,729.58,5.0687,0.5938,22.0188,1
+omp1_static,,1,601.233,160,10240,9460.89,3,0,2,<not supported>,<not supported>,<not supported>,<not supported>,15.736,923.92,0.0187,0.0,0.0125,1
+omp2_b1,,1,4379.809,10240,10240,69351.41,144,3,37,<not supported>,<not supported>,<not supported>,<not supported>,15.834,6772.6,0.0141,0.0003,0.0036,1
+omp2_b1_passive,OMP_WAIT_POLICY=passive,1,6250.154,10240,10240,10494.92,594095,1598,36,<not supported>,<not supported>,<not supported>,<not supported>,1.679,1024.89,58.0171,0.1561,0.0035,1
+serial,,2,3877.813,160,10240,3874.24,7,2,3,<not supported>,<not supported>,<not supported>,<not supported>,0.999,378.34,0.0437,0.0125,0.0187,1
+omp1,,2,543.094,160,10240,8739.89,20,0,2,<not supported>,<not supported>,<not supported>,<not supported>,16.093,853.5,0.125,0.0,0.0125,1
+omp2,,2,548.798,160,10240,8786.47,2305,0,3,<not supported>,<not supported>,<not supported>,<not supported>,16.01,858.05,14.4062,0.0,0.0187,1
+std,,2,656.247,160,10240,7317.53,903,141,3522,<not supported>,<not supported>,<not supported>,<not supported>,11.151,714.6,5.6437,0.8812,22.0125,1
+omp1_static,,2,563.992,160,10240,9114.15,10,0,2,<not supported>,<not supported>,<not supported>,<not supported>,16.16,890.05,0.0625,0.0,0.0125,1
+omp2_b1,,2,4083.506,10240,10240,66331.91,80,0,37,<not supported>,<not supported>,<not supported>,<not supported>,16.244,6477.73,0.0078,0.0,0.0036,1
+omp2_b1_passive,OMP_WAIT_POLICY=passive,2,6166.308,10240,10240,10642.80,594172,3284,35,<not supported>,<not supported>,<not supported>,<not supported>,1.726,1039.34,58.0246,0.3207,0.0034,1
+serial,,3,3892.931,160,10240,3873.91,13,0,3,<not supported>,<not supported>,<not supported>,<not supported>,0.995,378.31,0.0813,0.0,0.0187,1
+omp1,,3,1159.017,160,10240,18350.22,92,15,2,<not supported>,<not supported>,<not supported>,<not supported>,15.833,1792.01,0.575,0.0938,0.0125,1
+omp2,,3,514.858,160,10240,8235.86,19,2,3,<not supported>,<not supported>,<not supported>,<not supported>,15.996,804.28,0.1187,0.0125,0.0187,1
+std,,3,593.328,160,10240,6510.67,880,85,3523,<not supported>,<not supported>,<not supported>,<not supported>,10.973,635.81,5.5,0.5312,22.0188,1
+omp1_static,,3,557.423,160,10240,8953.07,17,0,2,<not supported>,<not supported>,<not supported>,<not supported>,16.062,874.32,0.1062,0.0,0.0125,1
+omp2_b1,,3,4367.592,10240,10240,69755.29,110,2,33,<not supported>,<not supported>,<not supported>,<not supported>,15.971,6812.04,0.0107,0.0002,0.0032,1
+omp2_b1_passive,OMP_WAIT_POLICY=passive,3,6082.583,10240,10240,10139.75,595128,1075,34,<not supported>,<not supported>,<not supported>,<not supported>,1.667,990.21,58.118,0.105,0.0033,1
