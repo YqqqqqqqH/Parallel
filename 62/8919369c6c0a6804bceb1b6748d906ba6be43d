@@ -1,0 +1,238 @@
+lab2/openmp_ivf_lab/report/report.md
+  s_f8ff378ef2e236::t_93f2c78f4bf6ef 242-303
+  s_f8ff378ef2e236::t_d45cc92f44b461 143
+  s_f8ff378ef2e236::t_99fefd3de5a9da 35
+  s_f8ff378ef2e236::t_d373107a83b410 106,124,126-133,135,152,160-165
+  s_f8ff378ef2e236::t_ad8eb964b0dd76 141,169
+  s_f8ff378ef2e236::t_1142e153e53fe9 173,175
+  s_f8ff378ef2e236::t_f2fe7bdbea583a 39,52-53,58,122-123,125,134,136,138,237
+  s_f8ff378ef2e236::t_d605f1b89b4c72 137,156
+lab2/openmp_ivf_lab/results/server/env.txt
+  s_f8ff378ef2e236::t_b99a0b170b3291 1-70
+lab2/openmp_ivf_lab/scripts/model_B.py
+  s_f8ff378ef2e236::t_307f54b750f944 9,18-19,44-51,60,62-63,66
+lab2/openmp_ivf_lab/results/server/timev_summary.csv
+  s_f8ff378ef2e236::t_3e9346287164a5 1-6
+lab2/openmp_ivf_lab/results/server/e0_correctness_official.txt
+  s_f8ff378ef2e236::t_b99a0b170b3291 1-103
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep10_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep10_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep10_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep60_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/S4_blocked.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-1081
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep60_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/实验日志.md
+  s_f8ff378ef2e236::t_303720c58ef7e9 572-575
+  s_f8ff378ef2e236::t_93f2c78f4bf6ef 518
+  s_f8ff378ef2e236::t_23a91ee0e02d61 576-658
+  s_f8ff378ef2e236::t_ce0335596a7881 659-679
+  s_f8ff378ef2e236::t_94138bfcb25ee8 508-517,519-571
+  s_f8ff378ef2e236::t_3f0160099511cb 503-507
+  s_f8ff378ef2e236::t_2f1a49e5ef2f12 435
+  s_f8ff378ef2e236::t_ef016990988810 450-502
+  s_f8ff378ef2e236::t_b99a0b170b3291 410-434,436-449
+lab2/openmp_ivf_lab/scripts/summarize.py
+  s_f8ff378ef2e236::t_f911b84241ed36 9,18,24,55
+lab2/openmp_ivf_lab/results/server/S2.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-721
+lab2/openmp_ivf_lab/results/server/stats/S1_omp1_np1_b128_p16.csv
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-49
+lab2/openmp_ivf_lab/results/server/stats/S1_omp1_np1_b128_p1.csv
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-4
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep60_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep60_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/env.sh
+  s_f8ff378ef2e236::t_c502dcb94ea50c 10-14,27-28
+lab2/openmp_ivf_lab/scripts/stats_B.sh
+  s_f8ff378ef2e236::t_0ca683dcd83956 3-4,9-13,15,17
+  s_f8ff378ef2e236::t_f977e52789f328 19-23
+lab2/openmp_ivf_lab/results/server/B_model.csv
+  s_f8ff378ef2e236::t_757e917bd87cf0 1-13
+lab2/openmp_ivf_lab/results/server/S6.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-181
+lab2/openmp_ivf_lab/Makefile
+  s_f8ff378ef2e236::t_c502dcb94ea50c 22-26,62
+lab2/openmp_ivf_lab/results/server/S2_summary.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-25
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep60_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep60_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_dynamic1_b64_asc.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/scripts/server_S1.sh
+  s_f8ff378ef2e236::t_8faef39103f0fe 1-34
+lab2/openmp_ivf_lab/results/server/stats/S2_omp1_b64_p16.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep60_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep60_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/timev.py
+  s_f8ff378ef2e236::t_3197b38b4f8439 1-112
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_static_b64_asc.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep10_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/vecreport.sh
+  s_f8ff378ef2e236::t_f549f9f7b9c029 4-5,8,15-18,31,34
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_dynamic1_b64_orig.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep10_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_dynamic1_b1024_asc.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep10_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/bench.py
+  s_f8ff378ef2e236::t_305d198ec5952a 8-13,35,38-40,133-182,185,193-222,257-258,265-267,292,296-297,305-306
+lab2/openmp_ivf_lab/scripts/server_S2S3.sh
+  s_f8ff378ef2e236::t_49ce5c30d590e4 1-27
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_static_b1024_orig.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep10_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/stats/S2_omp1_b64_p1.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-4
+lab2/openmp_ivf_lab/results/server/stats/S2_omp2_b1_g4096_p16_passive.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-49
+lab2/openmp_ivf_lab/results/server/S1_summary.csv
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-6
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep10_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/实验计划_服务器对照.md
+  s_f8ff378ef2e236::t_b99a0b170b3291 1-157
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep10_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/stats/S1_omp1_np1_b128_p32.csv
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-97
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_rep60_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep60_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/.run_S1.log
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-41
+lab2/openmp_ivf_lab/results/server/S1.csv
+  s_f8ff378ef2e236::t_8e7fe7dc943fdf 1-151
+lab2/openmp_ivf_lab/results/server/stats/S2_omp2_b1_g4096_p16.csv
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-49
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep10_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep10_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_dynamic1_b1024_orig.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_static_b1024_asc.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/S5_summary.csv
+  s_f8ff378ef2e236::t_19c31ab0bdc88f 1-11
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep60_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep10_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/profile.sh
+  s_f8ff378ef2e236::t_0ca683dcd83956 7-8,11
+lab2/openmp_ivf_lab/results/server/timev_raw/omp2_b1_passive_rep60_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep10_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/plot.py
+  s_f8ff378ef2e236::t_eb2c09bd70ec65 261-271,276-283,288-301
+  s_f8ff378ef2e236::t_4b493c4ec75b62 272
+  s_f8ff378ef2e236::t_47149a32d4a6ee 273-275,284-287
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep60_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/timev_raw/std_rep60_r2.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/.run_S2S3.log
+  s_f8ff378ef2e236::t_3c3ee8c3d31850 1-83
+  s_f8ff378ef2e236::t_3e9346287164a5 84-119
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep10_r3.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/scripts/server_S4S6.sh
+  s_f8ff378ef2e236::t_5dd7ced9e0b8ae 1-24
+lab2/openmp_ivf_lab/results/server/S5.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-301
+lab2/openmp_ivf_lab/results/server/timev_raw/omp1_rep60_r1.txt
+  s_f8ff378ef2e236::t_3e9346287164a5 1-28
+lab2/openmp_ivf_lab/results/server/S6_summary.csv
+  s_f8ff378ef2e236::t_19c31ab0bdc88f 1-7
+lab2/openmp_ivf_lab/results/server/stats/B_omp1_static_b64_orig.csv
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-49
+lab2/openmp_ivf_lab/results/server/.run_S4S6.log
+  s_f8ff378ef2e236::t_c30d371d0d2639 1-185
+lab2/openmp_ivf_lab/results/server/p0_profile_np8.csv
+  s_f8ff378ef2e236::t_b99a0b170b3291 1-1025
+lab2/openmp_ivf_lab/results/server/timev.csv
+  s_f8ff378ef2e236::t_3e9346287164a5 1-31
+lab2/openmp_ivf_lab/results/server/bw_probe.csv
+  s_f8ff378ef2e236::t_1abaa85511bbc2 1-9
+lab2/openmp_ivf_lab/results/server/perf_unavailable.txt
+  s_f8ff378ef2e236::t_f7a00c9789fed6 1-16
+lab2/openmp_ivf_lab/results/server/s0p_native_check.txt
+  s_f8ff378ef2e236::t_3ed060deb6011a 1-12
+lab2/openmp_ivf_lab/results/server/timev_raw/serial_rep10_r1.txt
+  s_f8ff378ef2e236::t_ed6142a4505479 1-28
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_default.asm
+  s_f8ff378ef2e236::t_62b73a6c5bc1dc 1-1993
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_default_vec_missed.txt
+  s_f8ff378ef2e236::t_7ffbd14b1a0bd8 1-219
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_default_vec_optimized.txt
+  s_f8ff378ef2e236::t_a61902b013fcba 1-6
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native.asm
+  s_f8ff378ef2e236::t_ce7322c2a90510 1-2000
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native512.asm
+  s_f8ff378ef2e236::t_a8fa70877b0d4a 1-2015
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native512_vec_missed.txt
+  s_f8ff378ef2e236::t_a65561395d17c0 1-231
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native512_vec_optimized.txt
+  s_f8ff378ef2e236::t_a0726747303361 1-4
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native_vec_missed.txt
+  s_f8ff378ef2e236::t_decde2e3a5eb6c 1-228
+lab2/openmp_ivf_lab/results/server/vec/ivf_search_native_vec_optimized.txt
+  s_f8ff378ef2e236::t_1f0517989bd0c0 1-3
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_default.asm
+  s_f8ff378ef2e236::t_f5257882e14cb5 1-371
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_default_vec_missed.txt
+  s_f8ff378ef2e236::t_9053e0ed60ca12 1-9
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_default_vec_optimized.txt
+  s_f8ff378ef2e236::t_a127c73c245cc8 1-5
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native.asm
+  s_f8ff378ef2e236::t_fd6f5a3ecdf0ac 1-427
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native512.asm
+  s_f8ff378ef2e236::t_3f427473413978 1-633
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native512_vec_missed.txt
+  s_f8ff378ef2e236::t_31e83b6eb94217 1-6
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native512_vec_optimized.txt
+  s_f8ff378ef2e236::t_ca6e80598bae50 1-7
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native_vec_missed.txt
+  s_f8ff378ef2e236::t_0c512ef29f16e3 1-6
+lab2/openmp_ivf_lab/results/server/vec/ivf_simd_native_vec_optimized.txt
+  s_f8ff378ef2e236::t_79a927a96a6d6e 1-6
+lab2/openmp_ivf_lab/results/server/vec/summary.txt
+  s_f8ff378ef2e236::t_4e96b4f5f8eb7e 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "628919369c6c0a6804bceb1b6748d906ba6be43d",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
