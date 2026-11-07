@@ -1,0 +1,21 @@
+lab2/openmp_ivf_lab/实验日志.md
+  s_f8ff378ef2e236::t_cc0012d68b492f 737-743
+lab2/openmp_ivf_lab/report/report.md
+  s_f8ff378ef2e236::t_e76e146a9793a8 221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a8abe4af0134f5c3f409084ca2ef03f81977ba1c",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
