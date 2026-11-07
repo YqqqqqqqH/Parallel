@@ -1,0 +1,103 @@
+# 二进制: ./ivf_lab_asan  数据: /var/dataset  时间: 2026-11-07T13:27:57+00:00
+PASS --only omp1 --queries 128 --nprobe 1 --threads 1 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 1 --batch 1 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 1 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 1 --batch 1 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 1 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 1 --batch 64 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 1 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 1 --batch 64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 2 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 2 --batch 1 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 2 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 2 --batch 1 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 2 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 2 --batch 64 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 2 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 2 --batch 64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 3 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 3 --batch 1 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 3 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 3 --batch 1 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 3 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 3 --batch 64 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 3 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 3 --batch 64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 7 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 1 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 7 --batch 1 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 7 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 64 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 7 --batch 64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 16 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 16 --batch 1 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 16 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 16 --batch 1 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 16 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 16 --batch 64 --grain 256 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 16 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.297656
+PASS --only std --queries 128 --nprobe 1 --threads 16 --batch 64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 16 --batch 64 --dist f32 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 1 --grain 64 --dist f32 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 16 --batch 64 --dist simd64 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 1 --grain 64 --dist simd64 | correctness=PASS recall@10=0.297656
+PASS --only omp1 --queries 128 --nprobe 1 --threads 16 --batch 64 --dist simd32 | correctness=PASS recall@10=0.297656
+PASS --only omp2 --queries 128 --nprobe 1 --threads 7 --batch 1 --grain 64 --dist simd32 | correctness=PASS recall@10=0.297656
+PASS --only omp3 --queries 32 --nprobe 1 --threads 7 --batch 1 --grain 256 | correctness=PASS recall@10=0.181250
+PASS --only omp1 --queries 128 --nprobe 8 --threads 1 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 1 --batch 1 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 1 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 1 --batch 1 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 1 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 1 --batch 64 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 1 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 1 --batch 64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 2 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 2 --batch 1 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 2 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 2 --batch 1 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 2 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 2 --batch 64 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 2 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 2 --batch 64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 3 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 3 --batch 1 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 3 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 3 --batch 1 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 3 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 3 --batch 64 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 3 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 3 --batch 64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 7 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 1 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 7 --batch 1 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 7 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 64 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 7 --batch 64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 16 --batch 1 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 16 --batch 1 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 16 --batch 1 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 16 --batch 1 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 16 --batch 64 --sched dynamic:1 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 16 --batch 64 --grain 256 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 16 --batch 64 --grain 64 --coarse split | correctness=PASS recall@10=0.726562
+PASS --only std --queries 128 --nprobe 8 --threads 16 --batch 64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 16 --batch 64 --dist f32 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 1 --grain 64 --dist f32 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 16 --batch 64 --dist simd64 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 1 --grain 64 --dist simd64 | correctness=PASS recall@10=0.726562
+PASS --only omp1 --queries 128 --nprobe 8 --threads 16 --batch 64 --dist simd32 | correctness=PASS recall@10=0.726562
+PASS --only omp2 --queries 128 --nprobe 8 --threads 7 --batch 1 --grain 64 --dist simd32 | correctness=PASS recall@10=0.726562
+PASS --only omp3 --queries 32 --nprobe 8 --threads 7 --batch 1 --grain 256 | correctness=PASS recall@10=0.571875
+PASS --only omp2 --queries 64 --k 1 --threads 16 --batch 1 --grain 64 | correctness=PASS recall@1=0.750000
+PASS --only omp2 --queries 64 --k 100 --threads 16 --batch 64 --grain 64 --dist simd32 | correctness=PASS recall@100=0.578594
+PASS --only omp1 --queries 64 --k 100 --threads 7 --batch 64 --dist simd32 | correctness=PASS recall@100=0.578594
+PASS --only omp1 --queries 4 --nprobe 4096 --threads 16 --batch 1 --grain 4096 --dist scalar | correctness=PASS recall@10=1.000000
+PASS --only omp2 --queries 4 --nprobe 4096 --threads 16 --batch 1 --grain 4096 --dist scalar | correctness=PASS recall@10=1.000000
+PASS --only std --queries 4 --nprobe 4096 --threads 16 --batch 1 --grain 4096 --dist scalar | correctness=PASS recall@10=1.000000
+PASS --only omp2 --queries 4 --nprobe 4096 --threads 16 --batch 4 --grain 4096 --dist simd32 --coarse split | correctness=PASS recall@10=1.000000
+# 合计 PASS=101 FAIL=0

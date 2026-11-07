@@ -151,6 +151,10 @@ def exp_S2():  # 实验 A 复现（H1、H2）
     return cfgs
 
 
+def exp_S2b():  # 补测：omp1 在 batch=1 时（团队大小为 1）
+    return [c("omp1", threads=p, batch=1, sched=SCHED1) for p in (1, 16)]
+
+
 def exp_S4():  # SIMD × ISA（含 AVX-512 偏好），区组设计（H4、H6）
     cfgs = []
     for binary in ("./ivf_lab", "./ivf_lab_native", "./ivf_lab_native512"):
@@ -191,7 +195,7 @@ def exp_E_blocked():
 
 EXPERIMENTS = {"A": exp_A, "E_blocked": exp_E_blocked, "A_sched": exp_A_sched, "A_wait": exp_A_wait, "B": exp_B, "C": exp_C,
                "C_cutoff": exp_C_cutoff, "D": exp_D, "E": exp_E, "F": exp_F,
-               "S1": exp_S1, "S2": exp_S2, "S4_blocked": exp_S4, "S5": exp_S5, "S6": exp_S6}
+               "S1": exp_S1, "S2": exp_S2, "S2b": exp_S2b, "S4_blocked": exp_S4, "S5": exp_S5, "S6": exp_S6}
 
 
 def runnable_others():

@@ -6,6 +6,7 @@
 青、黄对浅色背景对比度 < 3:1，所以每条线同时用不同标记形状 + 图例 + 线端直接标注。
 参考线（理想加速比、Amdahl 上界）用中性灰虚线。
 """
+import os
 import sys
 from pathlib import Path
 
@@ -17,8 +18,13 @@ import pandas as pd  # noqa: E402
 from matplotlib import font_manager  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "results"
-FIGURES = ROOT / "figures"
+# 服务器模式：IVF_RESULTS=results/server，图输出到 figures/server/；实验 A 读 S2，实验 E 读 S4_blocked
+SERVER = os.environ.get("IVF_RESULTS", "results").rstrip("/") == "results/server"
+RESULTS = ROOT / os.environ.get("IVF_RESULTS", "results")
+FIGURES = ROOT / ("figures/server" if SERVER else "figures")
+A_SUMMARY = "S2_summary.csv" if SERVER else "A_summary.csv"
+E_FILE = "S4_blocked.csv" if SERVER else "E_blocked.csv"
+FIGURES.mkdir(parents=True, exist_ok=True)
 
 for font in ("/mnt/c/Windows/Fonts/msyh.ttc", "/mnt/c/Windows/Fonts/msyhbd.ttc"):
     if Path(font).exists():
@@ -75,8 +81,17 @@ def line(ax, x, y, key, label_at=None, above=True):
                         textcoords="offset points", ha="right", fontsize=8, color=TEXT2)
 
 
+def main_configs(s):
+    """只保留主配置：omp2 用 CP2 选定的 grain（batch=1 为 128，大 batch 为 1024），不含 env 诊断配置。"""
+    env = s["env"].astype("string").fillna("") if "env" in s else pd.Series("", index=s.index)
+    big = int(s.batch.max())
+    keep = (env == "") & ((s.strategy != "omp2") | ((s.batch == 1) & (s.grain == 128))
+                          | ((s.batch == big) & (s.grain == 1024)))
+    return s[keep]
+
+
 def fig_A():
-    s = pd.read_csv(RESULTS / "A_summary.csv")
+    s = main_configs(pd.read_csv(RESULTS / A_SUMMARY))
     s["entity"] = s.apply(entity, axis=1)
     p0 = (RESULTS / "p0_summary.txt").read_text()
     f_sel = float(p0.split("nprobe=8")[1].split("f_sel=")[1].split()[0])
@@ -111,10 +126,15 @@ def fig_A():
         ax.set_xlabel("线程数 p")
         ax.set_ylabel("加速比 S(p)（相对串行 IVF）")
         ax.set_title(f"batch = {batch}" + ("（4P）" if batch == big else "（单查询）"), loc="left")
-    handles, labels = axes[1].get_legend_handles_labels()
+    handles, labels = [], []
+    for ax in axes:  # 合并两个子图的图例（服务器上 batch=1 没有 omp1 曲线）
+        for h, l in zip(*ax.get_legend_handles_labels()):
+            if l not in labels:
+                handles.append(h)
+                labels.append(l)
     fig.legend(handles, labels, loc="upper center", ncol=3, fontsize=8, bbox_to_anchor=(0.5, 1.0))
     fig.tight_layout(rect=(0, 0, 1, 0.92))
-    FIGURES.mkdir(exist_ok=True)
+    FIGURES.mkdir(parents=True, exist_ok=True)
     out = FIGURES / "A_scaling.png"
     fig.savefig(out)
     print(f"写入 {out}")
@@ -123,7 +143,7 @@ def fig_A():
 def fig_C():
     s = pd.read_csv(RESULTS / "C_summary.csv")
     s = s[(s.strategy == "omp2") & (s.queries == s.queries.max())]
-    serial = pd.read_csv(RESULTS / "A_summary.csv")
+    serial = pd.read_csv(RESULTS / A_SUMMARY)
     serial = serial[serial.strategy == "serial"].set_index("batch").T_ms
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6))
     color, marker, _ = SERIES["omp2"]
@@ -214,27 +234,31 @@ DIST_COLORS = {"f32": ("#e87ba4", "f32（float 累加，无 omp simd）"),
 
 def ratios_E():
     """区组设计：每轮每个区组内 T_scalar / T_dist，再取各轮中位数（及最小、最大值）。"""
-    raw = pd.read_csv(RESULTS / "E_blocked.csv")
+    raw = pd.read_csv(RESULTS / E_FILE)
     raw["isa"] = raw["isa"].astype(str)
     t = raw.groupby(["isa", "threads", "nprobe", "round", "dist"]).time_ms.median().unstack("dist")
-    r = pd.DataFrame({d: t["scalar"] / t[d] for d in DIST_COLORS})
+    r = pd.DataFrame({d: t["scalar"] / t[d] for d in DIST_COLORS if d in t})
     g = r.groupby(["isa", "threads", "nprobe"])
     return g.median(), g.min(), g.max(), t.groupby(["isa", "threads", "nprobe"]).median()
 
 
 def fig_E():
     med, lo, hi, _ = ratios_E()
-    groups = [("default", 1), ("native", 1), ("default", 16), ("native", 16)]
-    names = {"default": "默认", "native": "native"}
+    isas = [i for i in ("default", "native", "native512") if i in med.index.get_level_values("isa")]
+    big_p = int(med.index.get_level_values("threads").max())
+    groups = [(isa, p) for p in (1, big_p) for isa in isas]
+    names = {"default": "默认", "native": "native", "native512": "native\n+512"}
+    dists = [d for d in DIST_COLORS if d in med.columns]
+    rounds = int(pd.read_csv(RESULTS / E_FILE)["round"].max())
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.8), sharey=True)
-    width = 0.24
+    width = 0.72 / len(dists)
     for ax, nprobe in zip(axes, (8, 32)):
-        for j, d in enumerate(DIST_COLORS):
+        for j, d in enumerate(dists):
             color, label = DIST_COLORS[d]
             xs, ys, err = [], [], [[], []]
             for i, (isa, p) in enumerate(groups):
                 key = (isa, p, nprobe)
-                xs.append(i + (j - 1) * width)
+                xs.append(i + (j - (len(dists) - 1) / 2) * width)
                 ys.append(med.loc[key, d])
                 err[0].append(med.loc[key, d] - lo.loc[key, d])
                 err[1].append(hi.loc[key, d] - med.loc[key, d])
@@ -245,13 +269,13 @@ def fig_E():
                 ax.annotate(f"{y:.2f}", (x, y + up), xytext=(0, 2), textcoords="offset points",
                             ha="center", fontsize=6.5, color=TEXT2, rotation=90, va="bottom")
         ax.axhline(1, color=REF, linestyle="--", linewidth=1, zorder=2)
-        ax.set_xticks(range(len(groups)), [f"p={p}\n{names[isa]}" for isa, p in groups])
+        ax.set_xticks(range(len(groups)), [f"p={p}\n{names[isa]}" for isa, p in groups], fontsize=7)
         ax.grid(axis="x", visible=False)
         ax.set_title(f"omp1，batch=64，nprobe = {nprobe}", loc="left")
-    axes[0].set_ylabel("相对同条件标量的加速比\n（误差线：5 轮最小–最大）")
+    axes[0].set_ylabel(f"相对同条件标量的加速比\n（误差线：{rounds} 轮最小–最大）")
     axes[0].set_ylim(0, max(2.0, float(hi.max().max()) * 1.25))
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=3, fontsize=7.5, bbox_to_anchor=(0.5, 1.0))
+    fig.legend(handles, labels, loc="upper center", ncol=len(dists), fontsize=7.5, bbox_to_anchor=(0.5, 1.0))
     fig.tight_layout(rect=(0, 0, 1, 0.9))
     out = FIGURES / "E_simd.png"
     fig.savefig(out)
@@ -260,8 +284,8 @@ def fig_E():
 
 def fig_server():
     """本机（实验 A）与服务器（S2）并排：左 batch=4P，右 batch=1。实线为本机，虚线为服务器。"""
-    loc = pd.read_csv(RESULTS / "A_summary.csv")
-    srv = pd.read_csv(RESULTS / "server" / "S2_summary.csv")
+    loc = pd.read_csv(ROOT / "results" / "A_summary.csv")
+    srv = pd.read_csv(ROOT / "results" / "server" / "S2_summary.csv")
     for d in (loc, srv):
         d["entity"] = d.apply(entity, axis=1)
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6))
