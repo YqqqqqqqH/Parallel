@@ -1,0 +1,115 @@
+[B r1 1/21      7s]  --threads 16 --batch 64 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=56.345807/59.681277/79.742089 qps=17157.809954
+[B r1 2/21      9s]  --threads 16 --batch 1024 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.197927/54.855760/64.515717 qps=18667.137234
+[B r1 3/21     15s]  --batch 64 --order orig --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=393.523088/402.102165/416.869917 qps=2546.616480
+[B r1 4/21     17s]  --threads 16 --batch 64 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=61.417650/63.919987/68.249951 qps=16020.028289
+[B r1 5/21     19s]  --threads 16 --batch 64 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.937423/57.865109/62.047388 qps=17696.328888
+[B r1 6/21     21s]  --threads 16 --batch 1024 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.947763/56.577566/61.261163 qps=18099.046697
+[B r1 7/21     23s]  --threads 16 --batch 64 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.222957/55.793391/84.421338 qps=18353.428112
+[B r1 8/21     25s]  --threads 16 --batch 64 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=58.206184/60.460666/70.129693 qps=16936.631305
+[B r1 9/21     27s]  --threads 16 --batch 1024 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.549196/50.975972/52.524862 qps=20087.895331
+[B r1 10/21     29s]  --threads 16 --batch 64 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=55.633607/59.785744/84.593499 qps=17127.829145
+[B r1 11/21     31s]  --threads 16 --batch 1024 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.400738/52.709535/55.903043 qps=19427.225258
+[B r1 12/21     33s]  --threads 16 --batch 64 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=60.074844/63.447345/67.793533 qps=16139.367091
+[B r1 13/21     35s]  --threads 16 --batch 1024 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.495490/48.665275/50.765391 qps=21041.697380
+[B r1 14/21     37s]  --threads 16 --batch 1024 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=55.120583/60.585190/65.455543 qps=16901.820256
+[B r1 15/21     43s]  --batch 64 --order desc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=385.834305/396.006794/415.308725 qps=2585.814219
+[B r1 16/21     48s]  --batch 64 --order asc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=384.819567/389.110674/404.004405 qps=2631.642023
+[B r1 17/21     50s]  --threads 16 --batch 1024 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=46.054839/46.892648/48.578951 qps=21837.112097
+[B r1 18/21     52s]  --threads 16 --batch 1024 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.535680/48.115677/50.081836 qps=21282.044935
+[B r1 19/21     54s]  --threads 16 --batch 1024 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.842597/58.267003/63.310858 qps=17574.269265
+[B r1 20/21     56s]  --threads 16 --batch 64 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.128370/54.390645/60.732977 qps=18826.766993
+[B r1 21/21     58s]  --threads 16 --batch 64 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.909093/53.624782/58.097507 qps=19095.648725
+[B r2 1/21     59s]  --threads 16 --batch 64 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.208282/53.362853/59.300864 qps=19189.378979
+[B r2 2/21     61s]  --threads 16 --batch 64 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.891730/55.015845/57.367901 qps=18612.819803
+[B r2 3/21     67s]  --batch 64 --order asc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=374.069488/384.278564/394.153566 qps=2664.733597
+[B r2 4/21     69s]  --threads 16 --batch 1024 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.174805/49.968512/52.006214 qps=20492.905612
+[B r2 5/21     71s]  --threads 16 --batch 1024 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.100811/54.424154/62.761056 qps=18815.175508
+[B r2 6/21     72s]  --threads 16 --batch 64 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.395485/52.282069/53.571308 qps=19586.064966
+[B r2 7/21     74s]  --threads 16 --batch 64 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.727105/55.334322/59.120148 qps=18505.693279
+[B r2 8/21     76s]  --threads 16 --batch 1024 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.966469/47.180662/51.377135 qps=21703.807378
+[B r2 9/21     78s]  --threads 16 --batch 64 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.631312/54.119923/57.756032 qps=18920.943402
+[B r2 10/21     80s]  --threads 16 --batch 1024 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.554955/50.115192/53.075410 qps=20432.925604
+[B r2 11/21     81s]  --threads 16 --batch 1024 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=45.780038/46.507621/53.897494 qps=22017.897045
+[B r2 12/21     84s]  --threads 16 --batch 1024 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=45.414125/46.899389/51.818069 qps=21833.972913
+[B r2 13/21     85s]  --threads 16 --batch 1024 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.854141/45.776784/47.856181 qps=22369.417651
+[B r2 14/21     87s]  --threads 16 --batch 64 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.355860/52.428354/57.604996 qps=19531.416149
+[B r2 15/21     89s]  --threads 16 --batch 64 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.349460/52.956342/55.823049 qps=19336.683219
+[B r2 16/21     91s]  --threads 16 --batch 64 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.112518/55.280468/57.519621 qps=18523.721615
+[B r2 17/21     97s]  --batch 64 --order orig --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=380.089386/393.003933/430.105927 qps=2605.571892
+[B r2 18/21    102s]  --batch 64 --order desc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=380.798612/392.220507/402.792935 qps=2610.776290
+[B r2 19/21    104s]  --threads 16 --batch 1024 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=44.225430/46.068580/48.393379 qps=22227.730676
+[B r2 20/21    106s]  --threads 16 --batch 1024 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.808975/55.539662/61.440658 qps=18437.274775
+[B r2 21/21    108s]  --threads 16 --batch 64 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.781408/53.841316/58.754228 qps=19018.851619
+[B r3 1/21    110s]  --threads 16 --batch 64 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.127062/52.265544/57.454023 qps=19592.257756
+[B r3 2/21    111s]  --threads 16 --batch 1024 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.226644/50.447744/56.469089 qps=20298.231569
+[B r3 3/21    113s]  --threads 16 --batch 64 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=55.680950/56.961063/59.316660 qps=17977.192596
+[B r3 4/21    115s]  --threads 16 --batch 1024 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.103622/44.696012/46.979079 qps=22910.321395
+[B r3 5/21    117s]  --threads 16 --batch 64 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.711285/52.747423/54.047390 qps=19413.270673
+[B r3 6/21    119s]  --threads 16 --batch 1024 --sched static --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.670979/58.907196/65.389332 qps=17383.275359
+[B r3 7/21    121s]  --threads 16 --batch 64 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=52.063225/52.968339/54.138391 qps=19332.303215
+[B r3 8/21    122s]  --threads 16 --batch 1024 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=44.490317/47.097600/62.157343 qps=21742.084292
+[B r3 9/21    124s]  --threads 16 --batch 64 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=52.897998/56.565257/58.422138 qps=18102.985018
+[B r3 10/21    126s]  --threads 16 --batch 64 --sched dynamic:1 --order desc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.501330/53.631647/56.049115 qps=19093.204428
+[B r3 11/21    128s]  --threads 16 --batch 64 --grain 1024 --order asc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.538090/52.468284/53.819411 qps=19516.552133
+[B r3 12/21    130s]  --threads 16 --batch 64 --sched static --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=57.036824/58.849974/62.581039 qps=17400.177759
+[B r3 13/21    132s]  --threads 16 --batch 1024 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=44.510810/46.472557/48.328182 qps=22034.509528
+[B r3 14/21    137s]  --batch 64 --order asc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=377.015737/381.936804/391.502000 qps=2681.071814
+[B r3 15/21    139s]  --threads 16 --batch 64 --grain 1024 --order orig --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.237022/51.974358/54.020371 qps=19702.022873
+[B r3 16/21    141s]  --threads 16 --batch 1024 --sched dynamic:1 --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=44.239737/47.364429/50.105258 qps=21619.599577
+[B r3 17/21    146s]  --batch 64 --order orig --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=385.828606/395.316010/407.582523 qps=2590.332732
+[B r3 18/21    148s]  --threads 16 --batch 1024 --grain 1024 --order desc --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.888167/44.963443/46.612790 qps=22774.056440
+[B r3 19/21    150s]  --threads 16 --batch 1024 --sched dynamic:1 --order orig --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=44.066750/45.542189/47.274986 qps=22484.646297
+[B r3 20/21    155s]  --batch 64 --order desc --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=379.709012/390.779140/400.627668 qps=2620.405995
+[B r3 21/21    157s]  --threads 16 --batch 1024 --sched static --order asc --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.060089/55.014962/61.379409 qps=18613.118373
+[C r1 1/12      6s]  --threads 16 --batch 1 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=405.950783/415.697893/431.626564 qps=2463.327373
+[C r1 2/12      8s]  --threads 16 --batch 64 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.829197/53.025348/56.651767 qps=19311.518710
+[C r1 3/12     14s]  --threads 16 --batch 1 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=424.294552/428.016692/438.795063 qps=2392.430060
+[C r1 4/12     20s]  --threads 16 --batch 1 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=426.763596/433.938642/440.880471 qps=2359.780625
+[C r1 5/12     22s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp3 --repeats 10 | time_ms[min/median/max]=86.519108/91.308650/92.592333 qps=1401.838709
+[C r1 6/12     29s]  --threads 16 --batch 1 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=544.560320/551.121889/559.164560 qps=1858.028179
+[C r1 7/12     31s]  --threads 16 --batch 64 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.133183/53.120347/58.454189 qps=19276.982509
+[C r1 8/12     32s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp2 --repeats 10 | time_ms[min/median/max]=51.665308/53.417085/55.818445 qps=2396.237107
+[C r1 9/12     34s]  --threads 16 --batch 64 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.759382/53.349486/55.516238 qps=19194.186980
+[C r1 10/12     36s]  --threads 16 --batch 64 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.239869/53.925616/55.438881 qps=18989.119948
+[C r1 11/12     38s]  --threads 16 --batch 64 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.532058/54.080644/55.753960 qps=18934.685938
+[C r1 12/12     44s]  --threads 16 --batch 1 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=416.778829/422.291068/436.377519 qps=2424.867769
+[C r2 1/12     46s]  --threads 16 --batch 64 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.825949/53.002777/58.986074 qps=19319.742618
+[C r2 2/12     48s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp3 --repeats 10 | time_ms[min/median/max]=91.134492/93.527076/99.949775 qps=1368.587630
+[C r2 3/12     55s]  --threads 16 --batch 1 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=528.648098/533.254221/564.722989 qps=1920.284847
+[C r2 4/12     56s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp2 --repeats 10 | time_ms[min/median/max]=48.721140/50.673260/55.599644 qps=2525.987079
+[C r2 5/12     58s]  --threads 16 --batch 64 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.871990/52.189020/64.514322 qps=19620.985222
+[C r2 6/12     64s]  --threads 16 --batch 1 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=403.259924/424.520517/467.724887 qps=2412.133122
+[C r2 7/12     66s]  --threads 16 --batch 64 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.933526/51.400567/52.638636 qps=19921.959420
+[C r2 8/12     72s]  --threads 16 --batch 1 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=423.619243/430.537946/462.149084 qps=2378.419854
+[C r2 9/12     78s]  --threads 16 --batch 1 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=411.288838/444.379609/464.965614 qps=2304.336156
+[C r2 10/12     85s]  --threads 16 --batch 1 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=471.253630/501.054939/520.099855 qps=2043.688068
+[C r2 11/12     86s]  --threads 16 --batch 64 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.442786/51.784952/54.055122 qps=19774.084369
+[C r2 12/12     88s]  --threads 16 --batch 64 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.955680/53.597857/55.068436 qps=19105.241643
+[C r3 1/12     90s]  --threads 16 --batch 64 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.559032/50.820062/52.135073 qps=20149.522840
+[C r3 2/12     96s]  --threads 16 --batch 1 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=400.895272/406.461709/457.941148 qps=2519.302498
+[C r3 3/12     97s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp2 --repeats 10 | time_ms[min/median/max]=52.020902/53.660493/63.408065 qps=2385.367574
+[C r3 4/12    103s]  --threads 16 --batch 1 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=416.288294/435.271334/461.421460 qps=2352.555570
+[C r3 5/12    105s]  --threads 16 --batch 64 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.219899/53.330848/57.641529 qps=19200.894762
+[C r3 6/12    107s]  --threads 16 --batch 64 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.226022/52.308328/53.244746 qps=19576.232679
+[C r3 7/12    113s]  --threads 16 --batch 1 --grain 256 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=417.724402/424.232633/457.100890 qps=2413.769991
+[C r3 8/12    121s]  --threads 16 --batch 1 --grain 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=574.910030/595.994446/733.984437 qps=1718.136815
+[C r3 9/12    123s]  --threads 16 --batch 64 --grain 128 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.460193/51.038609/53.907721 qps=20063.242514
+[C r3 10/12    129s]  --threads 16 --batch 1 --grain 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=474.932100/492.953198/517.287887 qps=2077.276308
+[C r3 11/12    131s]  --threads 16 --batch 64 --grain 64 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.116976/53.279593/60.214284 qps=19219.366214
+[C r3 12/12    133s]  --threads 16 --batch 1 --grain 256 --queries 128 --only omp3 --repeats 10 | time_ms[min/median/max]=97.022293/99.181020/102.293937 qps=1290.569506
+[C_cutoff r1 1/5      6s]  --threads 16 --batch 1 --grain 128 --cutoff 512 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=406.949431/413.641547/451.086231 qps=2475.573374
+[C_cutoff r1 2/5     13s]  --threads 16 --batch 1 --grain 128 --cutoff 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=503.495144/546.390561/562.199350 qps=1874.117296
+[C_cutoff r1 3/5     20s]  --threads 16 --batch 1 --grain 128 --cutoff 2048 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=466.837098/498.194707/521.790431 qps=2055.421275
+[C_cutoff r1 4/5     26s]  --threads 16 --batch 1 --grain 128 --cutoff 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=410.485588/441.504924/452.098262 qps=2319.339931
+[C_cutoff r1 5/5     31s]  --threads 16 --batch 1 --grain 128 --cutoff 0 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=377.410570/406.587805/434.898248 qps=2518.521184
+[C_cutoff r2 1/5     38s]  --threads 16 --batch 1 --grain 128 --cutoff 0 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=412.577288/443.277871/484.461102 qps=2310.063435
+[C_cutoff r2 2/5     45s]  --threads 16 --batch 1 --grain 128 --cutoff 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=497.278198/541.891728/565.366991 qps=1889.676380
+[C_cutoff r2 3/5     51s]  --threads 16 --batch 1 --grain 128 --cutoff 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=415.805676/437.407289/458.746663 qps=2341.067526
+[C_cutoff r2 4/5     57s]  --threads 16 --batch 1 --grain 128 --cutoff 2048 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=469.643878/503.209540/529.016848 qps=2034.937573
+[C_cutoff r2 5/5     64s]  --threads 16 --batch 1 --grain 128 --cutoff 512 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=423.195435/451.975032/461.799648 qps=2265.611878
+[C_cutoff r3 1/5     70s]  --threads 16 --batch 1 --grain 128 --cutoff 512 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=407.347319/437.729564/454.244353 qps=2339.343936
+[C_cutoff r3 2/5     75s]  --threads 16 --batch 1 --grain 128 --cutoff 1024 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=375.421973/402.742170/453.079664 qps=2542.569602
+[C_cutoff r3 3/5     81s]  --threads 16 --batch 1 --grain 128 --cutoff 0 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=412.992475/438.405107/453.721401 qps=2335.739214
+[C_cutoff r3 4/5     88s]  --threads 16 --batch 1 --grain 128 --cutoff 2048 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=473.155308/500.459538/516.003057 qps=2046.119463
+[C_cutoff r3 5/5     96s]  --threads 16 --batch 1 --grain 128 --cutoff 4096 --only omp2 --queries 1024 --repeats 10 | time_ms[min/median/max]=532.168475/564.302418/592.134393 qps=1814.629829
+stats_B 完成

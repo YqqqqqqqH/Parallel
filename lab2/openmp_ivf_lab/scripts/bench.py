@@ -31,7 +31,7 @@ BIG = 4 * P     # 大 batch 固定为 4P
 Q = 1024        # 统一查询数
 THREADS = [1, 2, 4, 8, 16, 24]
 
-# 由检查点决定的默认值（CP1/CP2 之后在这里更新，并记入实验日志）
+# 由检查点决定的默认值：SCHED1 已在 CP1 确定；GRAIN 待 CP2 确定（见实验日志）
 SCHED1 = "dynamic:1"     # omp1 默认调度
 GRAIN = {1: 128, BIG: 1024}  # omp2 在 batch=1 / batch=4P 时的 grain
 

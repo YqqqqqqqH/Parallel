@@ -22,7 +22,7 @@ def summarize(exp):
     raw = pd.read_csv(os.path.join(ROOT, "results", f"{exp}.csv"))
     if "bin" not in raw:
         raw["bin"] = "./ivf_lab"
-    raw["env"] = raw["env"].fillna("") if "env" in raw else ""
+    raw["env"] = raw["env"].astype("string").fillna("") if "env" in raw else ""
     per_round = raw.groupby(KEYS + ["round"], dropna=False).agg(
         t=("time_ms", "median"), tmin=("time_ms", "min"), tmax=("time_ms", "max"),
         p50=("call_ms_p50", "median"), p95=("call_ms_p95", "median"),
@@ -36,11 +36,15 @@ def summarize(exp):
         threads_active=("threads_active", "first"), mean_C=("mean_c", "first"),
         blocks_per_query=("blocks", "first"), part_bytes_per_query=("part_bytes", "first"),
         recall=("recall", "first")).reset_index()
-    serial = s[s.strategy == "serial"].set_index(["queries", "batch", "nprobe", "order"])["T_ms"]
+    ser = s[s.strategy == "serial"]
+    serial = ser.set_index(["queries", "batch", "nprobe", "order"])["T_ms"]
+    # 串行时间与 batch 无关；没有同 batch 的串行配置时，用同 queries/nprobe/order 下各 batch 的中位数
+    serial_any = ser.groupby(["queries", "nprobe", "order"])["T_ms"].median()
 
     def speedup(row):
         key = (row.queries, row.batch, row.nprobe, row.order)
-        return serial.get(key, float("nan")) / row.T_ms
+        base = serial.get(key, serial_any.get((row.queries, row.nprobe, row.order), float("nan")))
+        return base / row.T_ms
 
     s["S"] = s.apply(speedup, axis=1)
     s["E"] = s.S / s.threads
@@ -48,7 +52,7 @@ def summarize(exp):
     s = s.sort_values(["batch", "strategy", "coarse", "threads", "grain", "dist", "isa"])
     s.to_csv(os.path.join(ROOT, "results", f"{exp}_summary.csv"), index=False)
     cols = ["strategy", "coarse", "threads", "queries", "batch", "grain", "sched", "dist", "isa", "order",
-            "nprobe", "T_ms", "min_ms", "max_ms", "round_spread", "S", "E", "QPS",
+            "nprobe", "cutoff", "T_ms", "min_ms", "max_ms", "round_spread", "S", "E", "QPS",
             "call_p50_ms", "call_p95_ms", "threads_active", "recall", "env"]
     varying = [col for col in cols if col in ("T_ms", "S", "E", "QPS") or s[col].nunique() > 1]
     print(s[varying].to_markdown(index=False, floatfmt=".3f"))

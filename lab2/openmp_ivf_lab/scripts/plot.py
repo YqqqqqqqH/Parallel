@@ -120,7 +120,38 @@ def fig_A():
     print(f"写入 {out}")
 
 
-FIGS = {"A": fig_A}
+def fig_C():
+    s = pd.read_csv(RESULTS / "C_summary.csv")
+    s = s[(s.strategy == "omp2") & (s.queries == s.queries.max())]
+    serial = pd.read_csv(RESULTS / "A_summary.csv")
+    serial = serial[serial.strategy == "serial"].set_index("batch").T_ms
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6))
+    color, marker, _ = SERIES["omp2"]
+    for ax, batch in zip(axes, sorted(s.batch.unique())):
+        d = s[s.batch == batch].sort_values("grain")
+        speed = serial[batch] / d.T_ms  # 相对同 batch 串行 IVF 的加速比
+        ax.plot(d.grain, speed, color=color, marker=marker, markersize=5, linewidth=2,
+                markeredgecolor="#fcfcfb", markeredgewidth=1.2, zorder=3)
+        for g, v in zip(d.grain, speed):
+            ax.annotate(f"{v:.2f}", (g, v), xytext=(0, 6), textcoords="offset points",
+                        ha="center", fontsize=8, color=TEXT2)
+        ax.axhline(1, color=REF, linestyle="--", linewidth=1, zorder=1)
+        ax.annotate("串行 = 1", (d.grain.iloc[-1], 1), xytext=(0, 4), textcoords="offset points",
+                    ha="right", fontsize=8, color=REF)
+        ax.set_xscale("log", base=2)
+        ax.set_xticks(list(d.grain), [f"{g}\n{nb:.1f} 块" for g, nb in zip(d.grain, d.blocks_per_query)])
+        ax.minorticks_off()
+        ax.set_ylim(0, max(1.0, speed.max()) * 1.25)
+        ax.set_xlabel("grain（每块最多候选数）/ 平均每查询块数")
+        ax.set_ylabel("加速比 S（相对串行 IVF）")
+        ax.set_title(f"omp2，p=16，batch = {batch}", loc="left")
+    fig.tight_layout()
+    out = FIGURES / "C_grain.png"
+    fig.savefig(out)
+    print(f"写入 {out}")
+
+
+FIGS = {"A": fig_A, "C": fig_C}
 
 if __name__ == "__main__":
     for name in sys.argv[1:]:
