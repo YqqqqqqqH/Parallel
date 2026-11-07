@@ -1,0 +1,156 @@
+[D r1 1/14      5s]  --batch 64 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=246.796917/251.416061/265.851254 qps=4072.929939
+[D r1 2/14      7s]  --threads 16 --batch 64 --nprobe 16 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=77.759646/80.919406/84.128855 qps=12654.566446
+[D r1 3/14     11s]  --batch 64 --nprobe 2 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=265.774200/272.015167/283.760961 qps=3764.495977
+[D r1 4/14     23s]  --batch 64 --nprobe 32 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=847.404347/864.569252/921.626212 qps=1184.404832
+[D r1 5/14     41s]  --batch 64 --nprobe 64 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=1413.115323/1436.592694/1457.262327 qps=712.797722
+[D r1 6/14     47s]  --batch 64 --nprobe 4 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=321.284635/324.174849/327.332981 qps=3158.789168
+[D r1 7/14     49s]  --threads 16 --batch 64 --nprobe 8 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=52.917075/54.508834/57.192438 qps=18785.945779
+[D r1 8/14     55s]  --batch 64 --nprobe 8 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=390.003403/401.807279/429.589601 qps=2548.485436
+[D r1 9/14     57s]  --threads 16 --batch 64 --nprobe 2 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=35.163251/36.584195/38.375346 qps=27990.229114
+[D r1 10/14     63s]  --threads 16 --batch 64 --nprobe 64 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=295.770191/316.174915/356.384583 qps=3238.713609
+[D r1 11/14     66s]  --threads 16 --batch 64 --nprobe 32 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=148.161496/166.297438/211.723691 qps=6157.641485
+[D r1 12/14     75s]  --batch 64 --nprobe 16 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=549.669479/571.115803/621.257988 qps=1792.981379
+[D r1 13/14     77s]  --threads 16 --batch 64 --nprobe 4 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=41.704803/44.018924/45.615993 qps=23262.721923
+[D r1 14/14     78s]  --threads 16 --batch 64 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=30.666270/32.366611/34.494316 qps=31637.542028
+[D r2 1/14     86s]  --batch 64 --nprobe 16 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=536.049105/552.226580/668.170702 qps=1854.311323
+[D r2 2/14     88s]  --threads 16 --batch 64 --nprobe 8 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.088713/54.055502/58.572674 qps=18943.492385
+[D r2 3/14     90s]  --threads 16 --batch 64 --nprobe 4 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=41.645898/44.057553/81.180848 qps=23242.325782
+[D r2 4/14     95s]  --batch 64 --nprobe 2 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=278.741921/299.246950/327.394505 qps=3421.922930
+[D r2 5/14    101s]  --batch 64 --nprobe 8 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=385.640969/412.197576/433.795395 qps=2484.245565
+[D r2 6/14    120s]  --batch 64 --nprobe 64 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=1453.001789/1479.300987/1569.289665 qps=692.218831
+[D r2 7/14    126s]  --threads 16 --batch 64 --nprobe 64 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=290.977960/325.891745/354.183114 qps=3142.147704
+[D r2 8/14    130s]  --threads 16 --batch 64 --nprobe 32 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=142.857168/155.946731/187.084590 qps=6566.344739
+[D r2 9/14    135s]  --batch 64 --nprobe 4 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=304.877529/312.201196/347.312096 qps=3279.936186
+[D r2 10/14    146s]  --batch 64 --nprobe 32 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=834.300025/855.063840/884.932751 qps=1197.571401
+[D r2 11/14    148s]  --threads 16 --batch 64 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=29.612264/31.418935/32.769193 qps=32591.810757
+[D r2 12/14    150s]  --threads 16 --batch 64 --nprobe 16 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=78.232475/82.907250/91.486867 qps=12351.151437
+[D r2 13/14    154s]  --batch 64 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=247.927362/252.536281/254.880264 qps=4054.862913
+[D r2 14/14    156s]  --threads 16 --batch 64 --nprobe 2 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=32.809465/33.717251/35.194400 qps=30370.210193
+[D r3 1/14    167s]  --batch 64 --nprobe 32 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=842.672306/863.701523/893.259101 qps=1185.594761
+[D r3 2/14    169s]  --threads 16 --batch 64 --nprobe 2 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=32.414672/34.192992/34.942339 qps=29947.657548
+[D r3 3/14    171s]  --threads 16 --batch 64 --nprobe 16 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=80.706455/89.205453/100.368451 qps=11479.118883
+[D r3 4/14    175s]  --batch 64 --nprobe 2 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=270.671656/280.361167/312.404334 qps=3652.431644
+[D r3 5/14    177s]  --threads 16 --batch 64 --nprobe 8 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.736625/52.834364/58.378366 qps=19381.325381
+[D r3 6/14    183s]  --threads 16 --batch 64 --nprobe 64 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=258.245144/290.977582/322.879390 qps=3519.171453
+[D r3 7/14    187s]  --batch 64 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=260.344144/267.824455/290.136061 qps=3823.399928
+[D r3 8/14    191s]  --threads 16 --batch 64 --nprobe 32 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=143.333842/153.918920/247.954293 qps=6652.853355
+[D r3 9/14    192s]  --threads 16 --batch 64 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=31.971402/33.772052/34.640431 qps=30320.928821
+[D r3 10/14    200s]  --batch 64 --nprobe 16 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=541.037126/549.970060/594.498904 qps=1861.919538
+[D r3 11/14    205s]  --batch 64 --nprobe 8 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=377.925850/386.904556/393.569314 qps=2646.647562
+[D r3 12/14    224s]  --batch 64 --nprobe 64 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=1382.586787/1437.039756/1472.908907 qps=712.575971
+[D r3 13/14    226s]  --threads 16 --batch 64 --nprobe 4 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=39.594934/40.587178/41.803233 qps=25229.642410
+[D r3 14/14    230s]  --batch 64 --nprobe 4 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=305.548209/310.550758/315.928131 qps=3297.367576
+[E r1 1/32      2s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.986171/53.298759/56.874205 qps=19212.454654
+[E r1 2/32     12s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=752.152641/762.939660/794.704955 qps=1342.176916
+[E r1 3/32     14s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=43.553505/45.149521/46.308224 qps=22680.196319
+[E r1 4/32     16s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.323597/50.938531/51.542366 qps=20102.660400
+[E r1 5/32     19s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=134.625697/147.687625/153.988059 qps=6933.553143
+[E r1 6/32     25s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=368.473066/374.990695/379.091832 qps=2730.734425
+[E r1 7/32     35s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=708.349370/729.397250/741.441966 qps=1403.898904
+[E r1 8/32     43s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=566.808799/574.795266/586.640666 qps=1781.503886
+[E r1 9/32     45s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.703830/51.342681/55.852030 qps=19944.419927
+[E r1 10/32     49s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=147.252559/153.267542/159.677544 qps=6681.127545
+[E r1 11/32     52s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=145.815881/152.565330/182.886547 qps=6711.878752
+[E r1 12/32     63s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=839.412346/853.922105/883.334631 qps=1199.172611
+[E r1 13/32     73s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=722.490195/744.805803/759.528512 qps=1374.855025
+[E r1 14/32     79s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=344.970224/351.493074/359.015133 qps=2913.286426
+[E r1 15/32     81s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.285015/48.768720/50.888423 qps=20997.065547
+[E r1 16/32     86s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=387.434006/393.446159/401.110929 qps=2602.643279
+[E r1 17/32     88s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.768267/51.842582/55.234656 qps=19752.102815
+[E r1 18/32     92s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=137.716736/141.151419/149.926213 qps=7254.620657
+[E r1 19/32     95s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=129.361990/135.621797/149.315352 qps=7550.408730
+[E r1 20/32    104s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=616.757530/637.782740/642.203137 qps=1605.562422
+[E r1 21/32    109s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=341.794411/355.649128/368.454959 qps=2879.242263
+[E r1 22/32    113s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=135.472012/142.941460/158.569329 qps=7163.771824
+[E r1 23/32    118s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=379.580873/382.469909/388.641662 qps=2677.334807
+[E r1 24/32    120s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.788655/56.230505/58.078787 qps=18210.756050
+[E r1 25/32    125s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=338.001896/345.665237/362.120758 qps=2962.403762
+[E r1 26/32    129s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=139.939646/148.190791/169.968336 qps=6910.011004
+[E r1 27/32    134s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=316.605839/320.589195/326.206853 qps=3194.118879
+[E r1 28/32    146s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=911.604606/930.901235/983.758262 qps=1100.009282
+[E r1 29/32    150s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=134.207539/140.202321/150.352851 qps=7303.730702
+[E r1 30/32    156s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=425.850720/429.648289/449.183293 qps=2383.344764
+[E r1 31/32    158s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.575349/52.406866/55.231271 qps=19539.424472
+[E r1 32/32    166s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=550.641481/580.301363/651.514686 qps=1764.600370
+[E r2 1/32    171s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=208.428336/230.814265/307.922530 qps=4436.467574
+[E r2 2/32    175s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=168.177754/199.297237/227.324992 qps=5138.054159
+[E r2 3/32    178s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=51.454478/53.751471/58.579769 qps=19050.641601
+[E r2 4/32    180s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.230543/56.947194/62.505898 qps=17981.570629
+[E r2 5/32    182s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=56.672608/58.834692/60.598779 qps=17404.697215
+[E r2 6/32    184s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=60.815863/82.455934/102.790179 qps=12418.754408
+[E r2 7/32    192s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=355.008768/480.869543/570.609331 qps=2129.475686
+[E r2 8/32    199s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=390.996576/431.824925/484.006915 qps=2371.331391
+[E r2 9/32    214s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=984.453888/1085.766040/1316.061715 qps=943.112938
+[E r2 10/32    229s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=931.313630/1036.141300/1178.260917 qps=988.282196
+[E r2 11/32    234s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=170.384321/208.180748/233.261668 qps=4918.802590
+[E r2 12/32    245s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=763.995387/816.229980/873.222431 qps=1254.548382
+[E r2 13/32    248s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=63.655583/69.091126/78.710326 qps=14821.006209
+[E r2 14/32    253s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=166.280872/211.968761/250.232999 qps=4830.900519
+[E r2 15/32    259s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=392.688577/426.991239/531.798538 qps=2398.175671
+[E r2 16/32    265s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=355.362183/379.080605/397.463683 qps=2701.272468
+[E r2 17/32    277s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=910.224643/948.566968/983.371174 qps=1079.523149
+[E r2 18/32    281s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=149.859635/183.192367/210.379472 qps=5589.752532
+[E r2 19/32    287s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=356.569325/379.445593/494.795915 qps=2698.674115
+[E r2 20/32    289s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.656920/54.608259/69.106705 qps=18751.742296
+[E r2 21/32    302s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=802.756790/922.547553/1159.275321 qps=1109.969883
+[E r2 22/32    308s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=398.037454/455.462695/504.035376 qps=2248.263167
+[E r2 23/32    313s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=167.588862/196.075750/213.864325 qps=5222.471404
+[E r2 24/32    315s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.167738/57.883390/73.918090 qps=17690.740104
+[E r2 25/32    320s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=194.858393/215.849831/234.955478 qps=4744.038924
+[E r2 26/32    326s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=376.111233/404.196711/547.240548 qps=2533.419919
+[E r2 27/32    341s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=975.040874/1139.920159/1406.114245 qps=898.308528
+[E r2 28/32    348s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=442.171621/499.767786/629.988886 qps=2048.951590
+[E r2 29/32    360s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=739.692801/917.845814/1059.845556 qps=1115.655794
+[E r2 30/32    365s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=172.330676/232.397604/261.753043 qps=4406.241650
+[E r2 31/32    368s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=67.901577/73.448825/79.767396 qps=13941.679897
+[E r2 32/32    380s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=739.618952/977.607578/1016.522243 qps=1047.455056
+[E r3 1/32    394s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=787.534572/1033.275885/1254.348601 qps=991.022838
+[E r3 2/32    397s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=69.106808/75.749805/115.962795 qps=13518.186614
+[E r3 3/32    400s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=69.431997/81.581240/103.138478 qps=12551.905315
+[E r3 4/32    416s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=959.130156/1141.937425/1394.947273 qps=896.721639
+[E r3 5/32    418s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=53.328336/57.895254/68.089210 qps=17687.114733
+[E r3 6/32    423s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=180.846583/204.852569/237.490106 qps=4998.716919
+[E r3 7/32    435s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=829.333699/946.220986/1062.203216 qps=1082.199630
+[E r3 8/32    443s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=414.228471/440.911038/550.862970 qps=2322.463971
+[E r3 9/32    446s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=61.968856/70.810978/86.911354 qps=14461.034559
+[E r3 10/32    452s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=227.803074/247.301676/259.050754 qps=4140.691703
+[E r3 11/32    459s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=413.303172/427.649830/596.110304 qps=2394.482420
+[E r3 12/32    466s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=347.478606/369.570425/497.689215 qps=2770.784486
+[E r3 13/32    476s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=755.283533/779.405309/833.477419 qps=1313.822204
+[E r3 14/32    478s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.156978/50.777065/54.413397 qps=20166.585052
+[E r3 15/32    480s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=46.850866/48.866373/50.927681 qps=20955.105681
+[E r3 16/32    485s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=307.456439/322.877116/338.645252 qps=3171.485216
+[E r3 17/32    495s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=608.165077/691.087535/781.884575 qps=1481.722573
+[E r3 18/32    501s]  --threads 1 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=352.301779/360.243889/367.323932 qps=2842.518729
+[E r3 19/32    512s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=871.591541/881.897749/1123.370629 qps=1161.132344
+[E r3 20/32    522s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=577.670124/612.079573/796.882083 qps=1672.985091
+[E r3 21/32    524s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=54.526278/71.495834/80.893990 qps=14322.512934
+[E r3 22/32    530s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=424.543679/447.550500/501.688519 qps=2288.009956
+[E r3 23/32    540s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=577.244867/653.282974/812.536240 qps=1567.467760
+[E r3 24/32    545s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=155.680220/199.756682/243.258776 qps=5126.236541
+[E r3 25/32    549s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=123.592331/130.924891/153.066097 qps=7821.278262
+[E r3 26/32    554s]  --threads 1 --batch 64 --sched dynamic:1 --dist simd64 --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=357.877029/372.418161/495.174187 qps=2749.597381
+[E r3 27/32    558s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=140.489560/150.998177/168.092259 qps=6781.538804
+[E r3 28/32    560s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=52.429815/58.738749/65.333651 qps=17433.125641
+[E r3 29/32    566s]  --threads 1 --batch 64 --sched dynamic:1 --dist scalar --nprobe 8 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=415.419821/439.045221/486.331841 qps=2332.333778
+[E r3 30/32    570s]  --threads 16 --batch 64 --sched dynamic:1 --dist f32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=132.997983/142.433303/153.394602 qps=7189.329897
+[E r3 31/32    573s]  --threads 16 --batch 64 --sched dynamic:1 --dist scalar --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=131.510798/139.651524/150.087355 qps=7332.537211
+[E r3 32/32    576s]  --threads 16 --batch 64 --sched dynamic:1 --dist simd32 --nprobe 32 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=128.294013/133.402354/137.134100 qps=7676.026495
+[F r1 1/6      2s]  --threads 16 --batch 256 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=49.486087/52.772480/54.716551 qps=19404.053205
+[F r1 2/6      4s]  --threads 16 --batch 16 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=64.746924/66.701740/74.796219 qps=15351.923353
+[F r1 3/6      6s]  --threads 16 --batch 64 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=55.911367/56.901757/58.038138 qps=17995.929212
+[F r1 4/6      8s]  --threads 16 --batch 256 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=49.412864/53.988562/56.138749 qps=18966.980626
+[F r1 5/6     10s]  --threads 16 --batch 64 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=58.532002/62.974538/68.487947 qps=16260.539964
+[F r1 6/6     12s]  --threads 16 --batch 16 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=80.540624/89.832298/105.015478 qps=11399.018202
+[F r2 1/6     14s]  --threads 16 --batch 16 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=81.611516/85.288690/92.938830 qps=12006.281255
+[F r2 2/6     16s]  --threads 16 --batch 16 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=64.741383/66.400696/69.079887 qps=15421.524984
+[F r2 3/6     18s]  --threads 16 --batch 64 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=56.595086/58.435327/60.327536 qps=17523.646420
+[F r2 4/6     20s]  --threads 16 --batch 64 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=59.187346/68.502227/72.377386 qps=14948.419122
+[F r2 5/6     22s]  --threads 16 --batch 256 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=50.043508/51.262837/53.883076 qps=19975.484385
+[F r2 6/6     24s]  --threads 16 --batch 256 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=48.250127/49.534095/52.810169 qps=20672.629630
+[F r3 1/6     25s]  --threads 16 --batch 64 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=57.053788/57.989649/60.360166 qps=17658.323816
+[F r3 2/6     27s]  --threads 16 --batch 256 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=48.877989/51.767124/54.314648 qps=19780.894144
+[F r3 3/6     29s]  --threads 16 --batch 64 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=52.675040/55.750880/57.924845 qps=18367.422915
+[F r3 4/6     31s]  --threads 16 --batch 256 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=51.699343/52.912823/55.346131 qps=19352.586801
+[F r3 5/6     33s]  --threads 16 --batch 16 --only std --queries 1024 --repeats 10 | time_ms[min/median/max]=77.668425/79.538738/83.300239 qps=12874.229832
+[F r3 6/6     35s]  --threads 16 --batch 16 --sched static --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=59.654409/62.021627/63.714284 qps=16510.369976

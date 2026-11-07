@@ -31,7 +31,7 @@ BIG = 4 * P     # 大 batch 固定为 4P
 Q = 1024        # 统一查询数
 THREADS = [1, 2, 4, 8, 16, 24]
 
-# 由检查点决定的默认值：SCHED1 已在 CP1 确定；GRAIN 待 CP2 确定（见实验日志）
+# 由检查点决定的默认值：SCHED1 在 CP1 确定，GRAIN 在 CP2 确定（见实验日志）
 SCHED1 = "dynamic:1"     # omp1 默认调度
 GRAIN = {1: 128, BIG: 1024}  # omp2 在 batch=1 / batch=4P 时的 grain
 
@@ -122,7 +122,16 @@ def exp_F():  # std::thread 与 omp1-static（相同划分）
     return cfgs
 
 
-EXPERIMENTS = {"A": exp_A, "A_sched": exp_A_sched, "A_wait": exp_A_wait, "B": exp_B, "C": exp_C,
+# 区组设计：同一组（除 dist 外其他参数相同）的配置背靠背运行，组内比值抵消机器状态的缓慢漂移。
+# 首次 E 运行中，第 2 轮几乎所有配置系统性偏慢（轮间差 10–75%），因此 E 改用区组设计重测。
+BLOCK_KEYS = {"E_blocked": ("bin", "threads", "nprobe")}
+
+
+def exp_E_blocked():
+    return exp_E()
+
+
+EXPERIMENTS = {"A": exp_A, "E_blocked": exp_E_blocked, "A_sched": exp_A_sched, "A_wait": exp_A_wait, "B": exp_B, "C": exp_C,
                "C_cutoff": exp_C_cutoff, "D": exp_D, "E": exp_E, "F": exp_F}
 
 
@@ -173,8 +182,21 @@ def main():
     try:
         out = open(out_path, mode, newline="")
         for r in range(1, args.rounds + 1):
-            order = cfgs[:]
-            rng.shuffle(order)
+            if args.exp in BLOCK_KEYS:  # 组间随机、组内随机，同组背靠背
+                keys = BLOCK_KEYS[args.exp]
+                groups = {}
+                for cfg in cfgs:
+                    groups.setdefault(tuple(cfg.get(k) for k in keys), []).append(cfg)
+                blocks = list(groups.values())
+                rng.shuffle(blocks)
+                order = []
+                for block in blocks:
+                    block = block[:]
+                    rng.shuffle(block)
+                    order += block
+            else:
+                order = cfgs[:]
+                rng.shuffle(order)
             for i, cfg in enumerate(order, 1):
                 cfg = dict(cfg, repeats=args.repeats)
                 rows, stdout = run(cfg, tmp_csv)

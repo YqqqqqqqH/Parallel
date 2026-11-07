@@ -1,0 +1,10 @@
+# started on Sat Nov  7 14:37:34 2026
+
+65022.21,msec,task-clock:u,65022210784,100.00,11.247,CPUs utilized
+0,,context-switches:u,65021860813,100.00,0.000,/sec
+0,,cpu-migrations:u,65021603871,100.00,0.000,/sec
+36,,page-faults:u,65021482005,100.00,0.554,/sec
+<not supported>,,cycles:u,0,100.00,,
+<not supported>,,instructions:u,0,100.00,,
+<not supported>,,cache-misses:u,0,100.00,,
+<not supported>,,branch-misses:u,0,100.00,,

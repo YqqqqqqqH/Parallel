@@ -45,9 +45,13 @@ student_test: student_tests
 student_test_asan: student_tests_asan
 	./student_tests_asan
 
+# 读带宽探针（实验 E / perf 分析用）
+bw_probe: bw_probe.cpp
+	$(CXX) $(CXXFLAGS) bw_probe.cpp -o $@
+
 # 向量化报告与反汇编：默认选项和 -march=native 各一份，输出到 results/vec/
 vecreport:
 	bash scripts/vecreport.sh
 
 clean:
-	rm -f ivf_lab ivf_lab_native ivf_lab_stats ivf_lab_asan ivf_tests student_tests student_tests_asan
+	rm -f bw_probe ivf_lab ivf_lab_native ivf_lab_stats ivf_lab_asan ivf_tests student_tests student_tests_asan
