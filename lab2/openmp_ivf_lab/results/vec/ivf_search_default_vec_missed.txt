@@ -1,0 +1,222 @@
+/usr/include/c++/13/bits/charconv.h:94:20: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/charconv.h:94:20: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/13/bits/charconv.h:71:12: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/charconv.h:71:12: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/basic_string.h:666:21: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_construct (__str_12(D), _4, 45);
+/usr/include/c++/13/bits/basic_string.h:666:21: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_construct (__str_12(D), _15, 45);
+/usr/include/c++/13/bits/charconv.h:94:20: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/charconv.h:94:20: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/13/bits/charconv.h:71:12: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/charconv.h:71:12: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/basic_string.h:666:21: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_construct (__str_5(D), prephitmp_90, 0);
+/usr/include/c++/13/bits/basic_string.h:666:21: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_construct (__str_5(D), 1, 0);
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+ivf_search.cpp:36:40: missed: not vectorized: no vectype for stmt: _3 = *_2;
+ scalar_type: const float
+ivf_search.cpp:103:31: missed: couldn't vectorize loop
+ivf_search.cpp:103:31: missed: not vectorized: multiple nested loops.
+ivf_search.cpp:105:35: missed: couldn't vectorize loop
+ivf_search.cpp:105:35: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/predefined_ops.h:270:17: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/predefined_ops.h:270:17: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_7, _15);
+/usr/include/c++/13/bits/stl_uninitialized.h:1104:22: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *__cur_13 = *__first_48;
+ivf_search.cpp:14:1: missed: splitting region at control altering definition _41 = operator new (_40);
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: not vectorized: statement can throw an exception: _41 = operator new (_40);
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb7
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb12
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *__cur_13 = *__first_48;
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_23, _42);
+/usr/include/c++/13/bits/vector.tcc:96:27: missed: splitting region at dominance boundary bb16
+ivf_search.cpp:14:55: missed: splitting region at dominance boundary bb3
+ivf_search.cpp:14:55: missed: splitting region at dominance boundary bb14
+/usr/include/c++/13/bits/vector.tcc:71:22: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("vector::reserve");
+ivf_search.cpp:14:55: missed: statement clobbers memory: std::vector<ivf::Neighbor>::~vector (_1);
+/usr/include/c++/13/bits/basic_string.h:2208:19: missed: statement clobbers memory: _34 = std::__cxx11::basic_string<char>::_M_replace (__rhs_5(D), 0, 0, _8, _14);
+/usr/include/c++/13/bits/char_traits.h:435:49: missed: statement clobbers memory: __builtin_memcpy (_24, _26, _29);
+/usr/include/c++/13/bits/basic_string.h:1459:18: missed: statement clobbers memory: _44 = std::__cxx11::basic_string<char>::_M_append (__lhs_3(D), pretmp_63, _13);
+/usr/include/c++/13/bits/char_traits.h:435:49: missed: statement clobbers memory: __builtin_memcpy (_35, _37, _40);
+/usr/include/c++/13/bits/basic_string.h:400:24: missed: statement clobbers memory: std::__throw_length_error ("basic_string::append");
+/usr/include/c++/13/bits/stl_vector.h:1148:34: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_vector.h:1148:34: missed: not vectorized: control flow in loop.
+ivf_search.cpp:82:6: missed: splitting region at control altering definition D.62345 = std::__cxx11::to_string (i_12); [return slot optimization]
+ivf_search.cpp:95:69: missed: statement clobbers memory: _32 = __cxa_allocate_exception (16);
+ivf_search.cpp:95:63: missed: statement clobbers memory: D.62375 = std::__cxx11::to_string (_9); [return slot optimization]
+ivf_search.cpp:94:71: missed: statement clobbers memory: D.62360 = std::__cxx11::to_string (_10); [return slot optimization]
+ivf_search.cpp:93:87: missed: not vectorized: statement can throw an exception: D.62345 = std::__cxx11::to_string (i_12); [return slot optimization]
+ivf_search.cpp:92:26: missed: splitting region at control altering definition _70 = std::__cxx11::basic_string<char>::insert (&D.62345, 0, "correctness failure at output ");
+/usr/include/c++/13/bits/basic_string.h:3676:36: missed: not vectorized: statement can throw an exception: _70 = std::__cxx11::basic_string<char>::insert (&D.62345, 0, "correctness failure at output ");
+/usr/include/c++/13/bits/basic_string.h:3676:36: missed: splitting region at dominance boundary bb13
+/usr/include/c++/13/bits/basic_string.h:3676:36: missed: splitting region at control altering definition _71 = std::__cxx11::basic_string<char>::append (&D.62352, ": expected ID ");
+/usr/include/c++/13/bits/basic_string.h:3676:46: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (&D.62352, _70);
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: not vectorized: statement can throw an exception: _71 = std::__cxx11::basic_string<char>::append (&D.62352, ": expected ID ");
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: splitting region at dominance boundary bb14
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: splitting region at control altering definition D.62373 = std::operator+<char, std::char_traits<char>, std::allocator<char> > (&D.62359, &D.62360); [return slot optimization]
+/usr/include/c++/13/bits/basic_string.h:3690:43: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (&D.62359, _71);
+ivf_search.cpp:94:55: missed: not vectorized: statement can throw an exception: D.62373 = std::operator+<char, std::char_traits<char>, std::allocator<char> > (&D.62359, &D.62360); [return slot optimization]
+ivf_search.cpp:94:55: missed: splitting region at control altering definition _72 = std::__cxx11::basic_string<char>::append (&D.62373, ", got ");
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: not vectorized: statement can throw an exception: _72 = std::__cxx11::basic_string<char>::append (&D.62373, ", got ");
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: splitting region at dominance boundary bb16
+/usr/include/c++/13/bits/basic_string.h:3690:36: missed: splitting region at control altering definition D.62376 = std::operator+<char, std::char_traits<char>, std::allocator<char> > (&D.62374, &D.62375); [return slot optimization]
+/usr/include/c++/13/bits/basic_string.h:3690:43: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (&D.62374, _72);
+ivf_search.cpp:95:47: missed: not vectorized: statement can throw an exception: D.62376 = std::operator+<char, std::char_traits<char>, std::allocator<char> > (&D.62374, &D.62375); [return slot optimization]
+ivf_search.cpp:95:47: missed: splitting region at dominance boundary bb24
+ivf_search.cpp:95:69: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_32, &D.62376);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62376);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62374);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62373);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62359);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62352);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62345);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62360);
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62375);
+ivf_search.cpp:95:69: missed: statement clobbers memory: __cxa_throw (_32, &_ZTISt13runtime_error, __dt_comp );
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62376);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 19
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb25
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb28
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62374);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 18
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb30
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62373);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 17
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb31
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb34
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62359);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 16
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb37
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62352);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 15
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb39
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62345);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 14
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb40
+/usr/include/c++/13/bits/basic_string.h:804:23: missed: splitting region at dominance boundary bb4
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62360);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 10
+/usr/include/c++/13/bits/basic_string.h:804:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&D.62375);
+ivf_search.cpp:82:6: missed: not vectorized: statement can throw an exception: resx 6
+ivf_search.cpp:95:69: missed: statement clobbers memory: __cxa_free_exception (_32);
+ivf_search.cpp:84:90: missed: statement clobbers memory: _58 = __cxa_allocate_exception (16);
+ivf_search.cpp:84:90: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_58, "result size mismatch");
+ivf_search.cpp:84:90: missed: statement clobbers memory: __cxa_throw (_58, &_ZTISt13runtime_error, __dt_comp );
+ivf_search.cpp:84:90: missed: statement clobbers memory: __cxa_free_exception (_58);
+/usr/include/c++/13/bits/stl_uninitialized.h:1104:22: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *__cur_27 = *__first_78;
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: statement clobbers memory: _72 = operator new (prephitmp_56);
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *_2 = *__args#0_22(D);
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *__cur_27 = *__first_78;
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: statement clobbers memory: __builtin_memcpy (prephitmp_21, __position_42, _45);
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_54, _73);
+/usr/include/c++/13/bits/stl_vector.h:1899:24: missed: statement clobbers memory: std::__throw_length_error ("vector::_M_realloc_insert");
+/usr/include/c++/13/bits/vector.tcc:521:30: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/stl_heap.h:229:28: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_heap.h:229:28: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/stl_heap.h:224:5: missed: not vectorized: more than one data ref in stmt: __value = __value;
+/usr/include/c++/13/bits/predefined_ops.h:158:23: missed: statement clobbers memory: _26 = __comp$_M_comp_18 (_30, _33);
+/usr/include/c++/13/bits/stl_heap.h:235:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_36] = MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_107];
+/usr/include/c++/13/bits/stl_heap.h:241:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_120] = MEM <unsigned char[12]> [(struct Neighbor *)_45];
+/usr/include/c++/13/bits/stl_heap.h:224:5: missed: not vectorized: more than one data ref in stmt: __value = __value;
+/usr/include/c++/13/bits/predefined_ops.h:196:16: missed: statement clobbers memory: _58 = __comp$_M_comp_18 (_56, &__value);
+/usr/include/c++/13/bits/stl_heap.h:142:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_143] = MEM <unsigned char[12]> [(struct Neighbor *)_56];
+/usr/include/c++/13/bits/stl_heap.h:146:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_140] = MEM <unsigned char[12]> [(struct Neighbor *)&__value];
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/stl_heap.h:262:18: missed: not vectorized: more than one data ref in stmt: __value = MEM[(struct Neighbor &)_10 + 18446744073709551600];
+/usr/include/c++/13/bits/stl_heap.h:263:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_10 + -16B] = MEM <unsigned char[12]> [(struct Neighbor *)_8];
+/usr/include/c++/13/bits/stl_heap.h:264:25: missed: statement clobbers memory: std::__adjust_heap<__gnu_cxx::__normal_iterator<ivf::Neighbor*, std::vector<ivf::Neighbor> >, long int, ivf::Neighbor, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const ivf::Neighbor&, const ivf::Neighbor&)> > (__first, 0, _69, __value, __cmp);
+ivf_search.cpp:22:22: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct value_type *)prephitmp_150 + -16B] = MEM <unsigned char[12]> [(struct value_type *)&value];
+/usr/include/c++/13/bits/predefined_ops.h:196:16: missed: statement clobbers memory: _79 = ivf::better (_77, &__value);
+/usr/include/c++/13/bits/stl_heap.h:142:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_205] = MEM <unsigned char[12]> [(struct Neighbor *)_77];
+/usr/include/c++/13/bits/stl_heap.h:146:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_173] = MEM <unsigned char[12]> [(struct Neighbor *)&__value];
+/usr/include/c++/13/bits/stl_vector.h:1292:21: missed: statement clobbers memory: std::vector<ivf::Neighbor>::_M_realloc_insert<const ivf::Neighbor&> (_2, D.73113, &value);
+/usr/include/c++/13/bits/new_allocator.h:191:4: missed: not vectorized: more than one data ref in stmt: *_10 = value;
+/usr/include/c++/13/bits/predefined_ops.h:196:16: missed: statement clobbers memory: _48 = ivf::better (_46, &__value);
+/usr/include/c++/13/bits/stl_heap.h:142:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_199] = MEM <unsigned char[12]> [(struct Neighbor *)_46];
+/usr/include/c++/13/bits/stl_heap.h:146:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_196] = MEM <unsigned char[12]> [(struct Neighbor *)&__value];
+/usr/include/c++/13/bits/stl_iterator.h:1125:2: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_iterator.h:1125:2: missed: not vectorized: control flow in loop.
+ivf_search.cpp:11:14: missed: couldn't vectorize loop
+ivf_search.cpp:11:14: missed: not vectorized: control flow in loop.
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_iterator.h:1148:47: missed: not vectorized: control flow in loop.
+ivf_search.cpp:45:31: missed: couldn't vectorize loop
+ivf_search.cpp:45:31: missed: not vectorized: control flow in loop.
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+ivf_search.cpp:36:40: missed: not vectorized: no vectype for stmt: _14 = *_32;
+ scalar_type: const float
+/usr/include/c++/13/bits/stl_uninitialized.h:642:19: missed: couldn't vectorize loop
+ivf_search.h:10:8: missed: not vectorized: no vectype for stmt: *__cur_156.distance =  Inf;
+ scalar_type: double
+ivf_search.cpp:42:28: missed: splitting region at control altering definition _127 = operator new (_126);
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: statement clobbers memory: _81 = operator new (_80);
+/usr/include/c++/13/bits/stl_heap.h:355:15: missed: not vectorized: more than one data ref in stmt: __value = *_100;
+/usr/include/c++/13/bits/stl_heap.h:356:22: missed: not vectorized: statement can throw an exception: std::__adjust_heap<__gnu_cxx::__normal_iterator<ivf::Neighbor*, std::vector<ivf::Neighbor> >, long int, ivf::Neighbor, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const ivf::Neighbor&, const ivf::Neighbor&)> > (__first, __parent_97, _94, __value, __comp);
+/usr/include/c++/13/bits/stl_heap.h:262:18: missed: not vectorized: more than one data ref in stmt: __value = *__i$_M_current_161;
+/usr/include/c++/13/bits/stl_heap.h:263:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)__i$_M_current_161] = MEM <unsigned char[12]> [(struct Neighbor *)iftmp.3_177];
+/usr/include/c++/13/bits/stl_heap.h:264:25: missed: not vectorized: statement can throw an exception: std::__adjust_heap<__gnu_cxx::__normal_iterator<ivf::Neighbor*, std::vector<ivf::Neighbor> >, long int, ivf::Neighbor, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const ivf::Neighbor&, const ivf::Neighbor&)> > (__first, 0, _88, __value, __comp);
+/usr/include/c++/13/bits/stl_heap.h:262:18: missed: not vectorized: more than one data ref in stmt: __value = *_109;
+/usr/include/c++/13/bits/stl_heap.h:263:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_109] = MEM <unsigned char[12]> [(struct Neighbor *)iftmp.3_177];
+/usr/include/c++/13/bits/stl_heap.h:264:25: missed: not vectorized: statement can throw an exception: std::__adjust_heap<__gnu_cxx::__normal_iterator<ivf::Neighbor*, std::vector<ivf::Neighbor> >, long int, ivf::Neighbor, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const ivf::Neighbor&, const ivf::Neighbor&)> > (__first, 0, _112, __value, __comp);
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: not vectorized: statement can throw an exception: _127 = operator new (_126);
+/usr/include/c++/13/bits/stl_vector.h:398:25: missed: splitting region at dominance boundary bb39
+/usr/include/c++/13/bits/stl_vector.h:398:25: missed: splitting region at dominance boundary bb48
+/usr/include/c++/13/bits/stl_algobase.h:931:11: missed: statement clobbers memory: __builtin_memset (__first_128, 0, _173);
+ivf_search.cpp:51:55: missed: splitting region at dominance boundary bb56
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (iftmp.3_177, _61);
+ivf_search.cpp:52:12: missed: splitting region at dominance boundary bb34
+ivf_search.cpp:52:12: missed: splitting region at dominance boundary bb52
+/usr/include/c++/13/bits/stl_vector.h:1910:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/13/bits/stl_vector.h:1910:24: missed: splitting region at dominance boundary bb58
+ivf_search.cpp:53:1: missed: statement clobbers memory: std::vector<ivf::Neighbor>::~vector (&centers);
+ivf_search.cpp:53:1: missed: splitting region at dominance boundary bb59
+ivf_search.cpp:53:1: missed: splitting region at dominance boundary bb60
+ivf_search.cpp:53:1: missed: splitting region at dominance boundary bb61
+ivf_search.cpp:53:1: missed: splitting region at dominance boundary bb62
+ivf_search.cpp:53:1: missed: splitting region at dominance boundary bb3
+/usr/include/c++/13/bits/stl_vector.h:1910:24: missed: statement clobbers memory: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/13/bits/stl_algobase.h:918:22: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_algobase.h:919:2: missed: not vectorized: no vectype for stmt: MEM <double> [(struct Neighbor *)__first_57] =  Inf;
+ scalar_type: double
+/usr/include/c++/13/bits/stl_heap.h:422:31: missed: couldn't vectorize loop
+/usr/include/c++/13/bits/stl_heap.h:422:31: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/13/bits/stl_heap.h:262:18: missed: not vectorized: more than one data ref in stmt: __value = *_43;
+/usr/include/c++/13/bits/stl_heap.h:263:7: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)_43] = MEM <unsigned char[12]> [(struct Neighbor *)_19];
+/usr/include/c++/13/bits/stl_heap.h:264:25: missed: statement clobbers memory: std::__adjust_heap<__gnu_cxx::__normal_iterator<ivf::Neighbor*, std::vector<ivf::Neighbor> >, long int, ivf::Neighbor, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(const ivf::Neighbor&, const ivf::Neighbor&)> > (__first, 0, _46, __value, __cmp);
+/usr/include/c++/13/bits/stl_algobase.h:398:4: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[12]> [(struct Neighbor *)output_10(D)] = MEM <unsigned char[12]> [(struct Neighbor *)prephitmp_26];
+/usr/include/c++/13/bits/stl_algobase.h:437:23: missed: statement clobbers memory: __builtin_memmove (output_10(D), prephitmp_26, _79);
+ivf_search.cpp:73:27: missed: couldn't vectorize loop
+ivf_search.cpp:73:27: missed: not vectorized: multiple nested loops.
+ivf_search.cpp:75:90: missed: couldn't vectorize loop
+ivf_search.cpp:75:90: missed: not vectorized: control flow in loop.
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+ivf_search.cpp:36:40: missed: not vectorized: no vectype for stmt: _38 = *_37;
+ scalar_type: const float
+ivf_search.cpp:73:28: missed: statement clobbers memory: ivf::TopK::TopK (&best, _1);
+ivf_search.cpp:75:21: missed: not vectorized: statement can throw an exception: ivf::TopK::add (&best, D.70874);
+ivf_search.cpp:78:20: missed: not vectorized: statement can throw an exception: ivf::TopK::finish (&best, _11);
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_59, _64);
+ivf_search.h:17:7: missed: statement clobbers memory: std::vector<ivf::Neighbor>::~vector (&best.heap_);
+ivf_search.cpp:58:50: missed: couldn't vectorize loop
+ivf_search.cpp:58:50: missed: not vectorized: multiple nested loops.
+ivf_search.cpp:61:26: missed: couldn't vectorize loop
+ivf_search.cpp:61:26: missed: not vectorized: multiple nested loops.
+ivf_search.cpp:63:76: missed: couldn't vectorize loop
+ivf_search.cpp:63:76: missed: not vectorized: control flow in loop.
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+ivf_search.cpp:36:40: missed: not vectorized: no vectype for stmt: _57 = *_56;
+ scalar_type: const float
+ivf_search.cpp:59:69: missed: statement clobbers memory: lists = ivf::select_lists (index_27(D), query_29, _4); [return slot optimization]
+ivf_search.cpp:60:28: missed: not vectorized: statement can throw an exception: ivf::TopK::TopK (&best, _5);
+ivf_search.cpp:63:25: missed: not vectorized: statement can throw an exception: ivf::TopK::add (&best, D.70847);
+ivf_search.cpp:66:20: missed: not vectorized: statement can throw an exception: ivf::TopK::finish (&best, _16);
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_91, _96);
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_43, _97);
+ivf_search.h:17:7: missed: statement clobbers memory: std::vector<ivf::Neighbor>::~vector (&best.heap_);
+ivf_search.cpp:55:6: missed: not vectorized: statement can throw an exception: resx 3
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_101, _106);

@@ -4,3 +4,4 @@ ivf_tests
 ivf_lab_*
 student_tests
 *.o
+student_tests_*

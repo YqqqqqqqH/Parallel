@@ -1,0 +1,73 @@
+{
+  "source": "ftp://ftp.irisa.fr/local/texmex/corpus/sift.tar.gz",
+  "python": "3.14.6",
+  "faiss": "1.15.1",
+  "numpy": "2.5.4",
+  "host": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "coords": {
+    "base": {
+      "integer": true,
+      "min": 0.0,
+      "max": 218.0
+    },
+    "query": {
+      "integer": true,
+      "min": 0.0,
+      "max": 184.0
+    },
+    "max_sqdist_bound": 6083072.0,
+    "bound_below_2^24": true
+  },
+  "train": {
+    "index": "IndexIVFFlat(IndexFlatL2, 128, 4096)",
+    "train_set": "sift_base (全部 1,000,000 个向量)",
+    "niter": 10,
+    "seed": 1234,
+    "nredo": 1,
+    "max_points_per_centroid": 256,
+    "min_points_per_centroid": 39,
+    "faiss_omp_threads": 24,
+    "seconds": 55.1
+  },
+  "lists": {
+    "min": 66,
+    "median": 227.0,
+    "mean": 244.140625,
+    "max": 1255,
+    "empty": 0,
+    "p99": 558.4500000000016
+  },
+  "gt": {
+    "k": 1000,
+    "seconds": 23.4,
+    "faiss_float_vs_exact_max_abs_err": 0.0,
+    "queries_with_tie_at_rank_1000_1001": 760
+  },
+  "gt_vs_public_top100": {
+    "identical_order": 4446,
+    "set_differs": 111,
+    "set_differs_not_explained_by_tie": 0
+  },
+  "files": {
+    "sift_base.fbin": {
+      "bytes": 512000008,
+      "md5": "ab87f00affb3d226529f3ac4474e0481"
+    },
+    "sift_query.fbin": {
+      "bytes": 5120008,
+      "md5": "d5a6480be641d3ddf0a08424f2785514"
+    },
+    "centroid_4096.fvecs": {
+      "bytes": 2113536,
+      "md5": "7e34ce5abd606db543cff9fde804dc09"
+    },
+    "cluster_id_4096.ivecs": {
+      "bytes": 8000000,
+      "md5": "5d005a30f2a70dee9ea50d6e891218f2"
+    },
+    "gt.ibin": {
+      "bytes": 40000008,
+      "md5": "618ed37b8d88f8bd78f7eeffb5de23a7"
+    }
+  }
+}

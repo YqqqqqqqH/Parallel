@@ -1,0 +1,6 @@
+ivf_simd.cpp:26:9: missed: statement clobbers memory: __builtin_memset (&D.60961, 0, 64);
+ivf_simd.cpp:36:9: missed: statement clobbers memory: __builtin_memset (&D.60988, 0, 32);
+ivf_simd.cpp:50:35: missed: couldn't vectorize loop
+ivf_simd.cpp:50:35: missed: not vectorized: control flow in loop.
+ivf_simd.cpp:50:35: missed: couldn't vectorize loop
+ivf_simd.cpp:50:35: missed: not vectorized: control flow in loop.
