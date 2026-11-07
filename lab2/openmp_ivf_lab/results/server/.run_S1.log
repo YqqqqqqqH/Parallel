@@ -1,0 +1,41 @@
+== 2026-11-07T10:04:18+00:00 编译
+== student_test
+PASS: 8950 student configurations match the serial reference
+== S0′ native / native512 正确性
+ivf_lab_native --dist simd32 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd32 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd64 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd64 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist scalar --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist scalar --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd32 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd32 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd64 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd64 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist scalar --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist scalar --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+12
+== 2026-11-07T10:05:18+00:00 S1 计时（3 轮，负载门控 --max-busy 2）
+[S1 r1 1/5      4s busy=0 load1=2.91 wait=0s]  --threads 8 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=80.964521/85.146694/90.044022 qps=12026.303687
+[S1 r1 2/5      8s busy=0 load1=2.76 wait=0s]  --threads 32 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=38.144838/38.495610/42.604223 qps=26600.435738
+[S1 r1 3/5     12s busy=0 load1=2.62 wait=0s]  --threads 24 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=40.299675/41.085450/51.785353 qps=24923.665190
+[S1 r1 4/5     16s busy=0 load1=2.49 wait=0s]  --threads 16 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=47.557650/50.462034/66.488638 qps=20292.483853
+[S1 r1 5/5     26s busy=0 load1=2.29 wait=0s]  --batch 128 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=588.682672/590.714321/594.638851 qps=1733.494454
+[S1 r2 1/5     36s busy=0 load1=2.01 wait=0s]  --batch 128 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=582.688751/589.460572/591.916912 qps=1737.181497
+[S1 r2 2/5     40s busy=0 load1=1.77 wait=0s]  --threads 32 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=38.146213/38.707259/42.963831 qps=26454.986131
+[S1 r2 3/5     43s busy=0 load1=1.77 wait=0s]  --threads 16 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=46.939839/47.618147/61.497017 qps=21504.406713
+[S1 r2 4/5     47s busy=0 load1=1.71 wait=0s]  --threads 24 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=39.594234/40.225238/45.916178 qps=25456.654849
+[S1 r2 5/5     51s busy=0 load1=3.50 wait=0s]  --threads 8 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=79.810656/80.996592/89.254248 qps=12642.507308
+[S1 r3 1/5     56s busy=0 load1=3.22 wait=0s]  --threads 8 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=80.150824/81.664204/96.225977 qps=12539.153630
+[S1 r3 2/5     60s busy=0 load1=3.22 wait=0s]  --threads 16 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=45.716030/47.115101/64.001229 qps=21734.008612
+[S1 r3 3/5     70s busy=0 load1=2.96 wait=0s]  --batch 128 --nprobe 1 --only serial --queries 1024 --repeats 10 | time_ms[min/median/max]=574.238944/575.968832/599.735163 qps=1777.873982
+[S1 r3 4/5     73s busy=0 load1=2.66 wait=0s]  --threads 24 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=39.076083/39.788624/53.274310 qps=25735.998991
+[S1 r3 5/5     77s busy=0 load1=2.52 wait=0s]  --threads 32 --batch 128 --nprobe 1 --sched dynamic:1 --only omp1 --queries 1024 --repeats 10 | time_ms[min/median/max]=31.548835/32.624687/39.877310 qps=31387.274305
+== 2026-11-07T10:06:35+00:00 S1 统计构建
+time_ms[min/median/max]=584.916509/590.562466/597.801294 qps=1733.940199
+call_ms[p50/p95]=73.462745/76.326343 mean_C=282.856445 threads_active=1
+time_ms[min/median/max]=51.864751/58.685974/71.819067 qps=17448.803014
+call_ms[p50/p95]=7.078630/9.284341 mean_C=282.856445 threads_active=16
+time_ms[min/median/max]=39.560787/41.360934/41.514410 qps=24757.661420
+call_ms[p50/p95]=5.068929/5.304812 mean_C=282.856445 threads_active=32
+== 2026-11-07T10:06:45+00:00 完成

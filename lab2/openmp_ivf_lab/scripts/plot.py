@@ -258,7 +258,47 @@ def fig_E():
     print(f"写入 {out}")
 
 
-FIGS = {"A": fig_A, "C": fig_C, "D": fig_D, "E": fig_E}
+def fig_server():
+    """本机（实验 A）与服务器（S2）并排：左 batch=4P，右 batch=1。实线为本机，虚线为服务器。"""
+    loc = pd.read_csv(RESULTS / "A_summary.csv")
+    srv = pd.read_csv(RESULTS / "server" / "S2_summary.csv")
+    for d in (loc, srv):
+        d["entity"] = d.apply(entity, axis=1)
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6))
+    for ax, batch_kind in zip(axes, ("big", "one")):
+        for src, style, tag in ((loc, "-", "本机"), (srv, "--", "服务器")):
+            big = int(src[src.strategy == "serial"].batch.max())
+            b = big if batch_kind == "big" else 1
+            env = src["env"].astype("string").fillna("") if "env" in src else ""
+            grain = 1024 if batch_kind == "big" else 128  # CP2 选定的 grain；排除 grain=4096 等诊断配置
+            d = src[(src.batch == b) & (src.strategy != "serial") & (src.threads <= 16) & (env == "")
+                    & ((src.strategy != "omp2") | (src.grain == grain))]
+            keys = ("omp1", "omp2") if batch_kind == "big" else ("omp2", "omp2+split")
+            for key in keys:
+                e = d[d.entity == key].sort_values("threads")
+                if len(e):
+                    color, marker, name = SERIES[key]
+                    ax.plot(e.threads, e.S, color=color, marker=marker, markersize=4, linewidth=1.8,
+                            linestyle=style, label=f"{name}（{tag}）", markeredgecolor="#fcfcfb",
+                            markeredgewidth=1, zorder=3)
+                    up = key in ("omp2", "omp2+split") if batch_kind == "big" else key == "omp2+split"
+                    ax.annotate(f"{e.S.iloc[-1]:.2f}", (e.threads.iloc[-1], e.S.iloc[-1]),
+                                xytext=(4, 5 if up else -6), textcoords="offset points", va="center",
+                                fontsize=7, color=TEXT2)
+        ax.set_xscale("log", base=2)
+        ax.set_xticks([1, 2, 4, 8, 16], ["1", "2", "4", "8", "16"])
+        ax.minorticks_off()
+        ax.set_xlabel("线程数 p")
+        ax.set_ylabel("加速比 S(p)（相对各自串行）")
+        ax.set_title("batch = 4P（64）" if batch_kind == "big" else "batch = 1", loc="left")
+        ax.legend(fontsize=6.5, loc="upper left")
+    fig.tight_layout()
+    out = FIGURES / "server_vs_local.png"
+    fig.savefig(out)
+    print(f"写入 {out}")
+
+
+FIGS = {"A": fig_A, "C": fig_C, "D": fig_D, "E": fig_E, "server": fig_server}
 
 if __name__ == "__main__":
     for name in sys.argv[1:]:

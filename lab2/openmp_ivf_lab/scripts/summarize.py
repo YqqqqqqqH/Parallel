@@ -6,6 +6,7 @@
 输出 results/<exp>_summary.csv，并在终端打印 Markdown 表。
 
 用法：python -I scripts/summarize.py A
+      IVF_RESULTS=results/server python -I scripts/summarize.py S2   # 服务器对照结果
 """
 
 import os
@@ -14,12 +15,13 @@ import sys
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RESULTS = os.path.join(ROOT, os.environ.get("IVF_RESULTS", "results"))
 KEYS = ["strategy", "threads", "queries", "batch", "k", "nprobe", "grain", "dist", "isa",
         "sched", "coarse", "cutoff", "order", "bin", "env"]
 
 
 def summarize(exp):
-    raw = pd.read_csv(os.path.join(ROOT, "results", f"{exp}.csv"))
+    raw = pd.read_csv(os.path.join(RESULTS, f"{exp}.csv"))
     if "bin" not in raw:
         raw["bin"] = "./ivf_lab"
     raw["env"] = raw["env"].astype("string").fillna("") if "env" in raw else ""
@@ -50,7 +52,7 @@ def summarize(exp):
     s["E"] = s.S / s.threads
     s["QPS"] = s.queries * 1000.0 / s.T_ms
     s = s.sort_values(["batch", "strategy", "coarse", "threads", "grain", "dist", "isa"])
-    s.to_csv(os.path.join(ROOT, "results", f"{exp}_summary.csv"), index=False)
+    s.to_csv(os.path.join(RESULTS, f"{exp}_summary.csv"), index=False)
     cols = ["strategy", "coarse", "threads", "queries", "batch", "grain", "sched", "dist", "isa", "order",
             "nprobe", "cutoff", "T_ms", "min_ms", "max_ms", "round_spread", "S", "E", "QPS",
             "call_p50_ms", "call_p95_ms", "threads_active", "recall", "env"]

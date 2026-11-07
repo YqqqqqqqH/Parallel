@@ -1,0 +1,6 @@
+/usr/include/c++/11/bits/stl_vector.h:98:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/11/bits/vector.tcc:95:27: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/11/bits/vector.tcc:502:30: optimized: basic block part vectorized using 16 byte vectors
+ivf_search.cpp:51:31: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/11/bits/stl_vector.h:98:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/11/bits/stl_vector.h:361:25: optimized: basic block part vectorized using 16 byte vectors

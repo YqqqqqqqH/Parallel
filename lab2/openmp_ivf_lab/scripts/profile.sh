@@ -4,8 +4,9 @@
 set -eu
 cd "$(dirname "$0")/.."
 source scripts/common.sh
-: > results/p0_summary.txt
+R="${IVF_RESULTS:-results}"
+: > "$R/p0_summary.txt"
 for np in 1 8 32; do
     ./ivf_lab "${DATA_ARGS[@]}" --mode profile --queries 1024 --nprobe "$np" --repeats 5 \
-        --profile-csv "results/p0_profile_np$np.csv" | tail -2 | tee -a results/p0_summary.txt
+        --profile-csv "$R/p0_profile_np$np.csv" | tail -2 | tee -a "$R/p0_summary.txt"
 done

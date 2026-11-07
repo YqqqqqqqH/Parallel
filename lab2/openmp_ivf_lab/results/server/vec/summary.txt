@@ -1,0 +1,43 @@
+# g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+== ISA=default（编译选项：-O3 -std=c++17 -Wall -Wextra -Wpedantic -fopenmp -pthread -I.）
+l2_distance_scalar   标量(ss/sd)=3   打包(ps/pd)=0   使用xmm=11  使用ymm=0   使用zmm=0   例： 1 	addsd ; 1 	mulsd ; 1 	subsd ;
+l2_distance_f32      标量(ss/sd)=9   打包(ps/pd)=4   使用xmm=28  使用ymm=0   使用zmm=0   例： 7 	addss ; 2 	mulps ; 1 	mulss ; 2 	subps ; 1 	subss ;
+l2_distance_simd64   标量(ss/sd)=13  打包(ps/pd)=6   使用xmm=48  使用ymm=0   使用zmm=0   例： 2 	addpd ; 7 	addsd ; 2 	mulpd ; 3 	mulsd ; 2 	subpd ; 3 	subsd ;
+l2_distance_simd32   标量(ss/sd)=13  打包(ps/pd)=3   使用xmm=36  使用ymm=0   使用zmm=0   例： 1 	addps ; 7 	addss ; 1 	mulps ; 3 	mulss ; 1 	subps ; 3 	subss ;
+-- 标量 double（ivf_search.cpp:35）的 missed 诊断：
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+-- 向量化报告中与距离函数相关的条目（行号见源文件）：
+ivf_simd.cpp:17:31: optimized: loop vectorized using 16 byte vectors
+ivf_simd.cpp:17:31: optimized: loop vectorized using 8 byte vectors
+ivf_simd.cpp:28:40: optimized: loop vectorized using 16 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 16 byte vectors
+ivf_simd.cpp:38:32: optimized: loop vectorized using 16 byte vectors
+== ISA=native（编译选项：-O3 -std=c++17 -Wall -Wextra -Wpedantic -fopenmp -pthread -I. -march=native）
+l2_distance_scalar   标量(ss/sd)=2   打包(ps/pd)=0   使用xmm=9   使用ymm=0   使用zmm=0   例： 1 	vfmadd231sd ; 1 	vsubsd ;
+l2_distance_f32      标量(ss/sd)=18  打包(ps/pd)=4   使用xmm=39  使用ymm=4   使用zmm=0   例： 12 	vaddss ; 3 	vfmadd231ss ; 2 	vmulps ; 2 	vsubps ; 3 	vsubss ;
+l2_distance_simd64   标量(ss/sd)=22  打包(ps/pd)=4   使用xmm=63  使用ymm=19  使用zmm=0   例： 8 	vaddsd ; 6 	vfmadd132sd ; 1 	vfmadd213sd ; 2 	vfmadd231pd ; 2 	vsubpd ; 7 	vsubsd ;
+l2_distance_simd32   标量(ss/sd)=22  打包(ps/pd)=2   使用xmm=49  使用ymm=6   使用zmm=0   例： 8 	vaddss ; 6 	vfmadd132ss ; 1 	vfmadd213ss ; 1 	vfmadd231ps ; 1 	vsubps ; 7 	vsubss ;
+-- 标量 double（ivf_search.cpp:35）的 missed 诊断：
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+-- 向量化报告中与距离函数相关的条目（行号见源文件）：
+ivf_simd.cpp:17:31: optimized: loop vectorized using 16 byte vectors
+ivf_simd.cpp:17:31: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:26:9: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:28:40: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:38:32: optimized: loop vectorized using 32 byte vectors
+== ISA=native512（编译选项：-O3 -std=c++17 -Wall -Wextra -Wpedantic -fopenmp -pthread -I. -march=native -mprefer-vector-width=512）
+l2_distance_scalar   标量(ss/sd)=2   打包(ps/pd)=0   使用xmm=9   使用ymm=0   使用zmm=0   例： 1 	vfmadd231sd ; 1 	vsubsd ;
+l2_distance_f32      标量(ss/sd)=38  打包(ps/pd)=4   使用xmm=70  使用ymm=7   使用zmm=4   例： 24 	vaddss ; 7 	vfmadd231ss ; 2 	vmulps ; 2 	vsubps ; 7 	vsubss ;
+l2_distance_simd64   标量(ss/sd)=46  打包(ps/pd)=4   使用xmm=115 使用ymm=12  使用zmm=19  例： 16 	vaddsd ; 14 	vfmadd132sd ; 1 	vfmadd213sd ; 2 	vfmadd231pd ; 2 	vsubpd ; 15 	vsubsd ;
+l2_distance_simd32   标量(ss/sd)=46  打包(ps/pd)=2   使用xmm=98  使用ymm=4   使用zmm=6   例： 16 	vaddss ; 14 	vfmadd132ss ; 1 	vfmadd213ss ; 1 	vfmadd231ps ; 1 	vsubps ; 15 	vsubss ;
+-- 标量 double（ivf_search.cpp:35）的 missed 诊断：
+ivf_search.cpp:35:31: missed: couldn't vectorize loop
+-- 向量化报告中与距离函数相关的条目（行号见源文件）：
+ivf_simd.cpp:17:31: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:17:31: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:26:9: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:28:40: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:38:32: optimized: loop vectorized using 64 byte vectors

@@ -19,6 +19,11 @@ ivf_lab: ivf_lab.cpp $(COMMON) $(HEADERS)
 ivf_lab_native: ivf_lab.cpp $(COMMON) $(HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(NATIVE) -DIVF_ISA='"native"' ivf_lab.cpp $(COMMON) -o $@
 
+# 服务器对照（H6）：GCC 对 cascadelake 默认 prefer-vector-width=256，-march=native 可能不产生 zmm；
+# 这个构建强制偏好 512 位向量
+ivf_lab_native512: ivf_lab.cpp $(COMMON) $(HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(NATIVE) -mprefer-vector-width=512 -DIVF_ISA='"native512"' ivf_lab.cpp $(COMMON) -o $@
+
 # 统计插桩构建：只用于收集 W_t / 忙碌时间 / 分阶段时间，不用于正式计时
 ivf_lab_stats: ivf_lab.cpp $(COMMON) $(HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -DIVF_STATS -DIVF_ISA='"default"' ivf_lab.cpp $(COMMON) -o $@
@@ -54,4 +59,4 @@ vecreport:
 	bash scripts/vecreport.sh
 
 clean:
-	rm -f bw_probe ivf_lab ivf_lab_native ivf_lab_stats ivf_lab_asan ivf_tests student_tests student_tests_asan
+	rm -f bw_probe ivf_lab ivf_lab_native ivf_lab_native512 ivf_lab_stats ivf_lab_asan ivf_tests student_tests student_tests_asan

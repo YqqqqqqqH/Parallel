@@ -6,6 +6,7 @@
 理想下界 ΣW/p 以及二者之比（模型不均衡度）。写入 results/B_model.csv。
 它只刻画"工作量分布 + 调度方式"，不含线程速度差异；与实测比较即可分离两类因素。
 """
+import argparse
 import csv
 import heapq
 import os
@@ -14,8 +15,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = 16
 
 
-def load():
-    with open(os.path.join(ROOT, "results", "p0_profile_np8.csv")) as f:
+def load(path):
+    with open(path) as f:
         rows = list(csv.DictReader(f))
     return [(int(r["candidates"]), float(r["select_us"]) + float(r["scan_us"])) for r in rows]
 
@@ -40,7 +41,14 @@ def dynamic_makespan(work, p):  # dynamic,1：空闲线程按顺序领取下一�
 
 
 def main():
-    data = load()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--profile", default=os.path.join(ROOT, "results", "p0_profile_np8.csv"),
+                    help="P0 逐查询画像 CSV（服务器上用 results/server/p0_profile_np8.csv）")
+    ap.add_argument("--p", type=int, default=P, help="线程数 P（大 batch 取 4P）")
+    ap.add_argument("--out", default=os.path.join(ROOT, "results", "B_model.csv"))
+    args = ap.parse_args()
+    p = args.p
+    data = load(args.profile)
     orders = {
         "orig": data,
         "asc": sorted(data, key=lambda x: x[0]),       # 与 harness 相同：按 C(q) 稳定排序
@@ -49,14 +57,13 @@ def main():
     out = []
     for order, rows in orders.items():
         work = [w for _, w in rows]
-        for batch in (64, len(work)):
+        for batch in (4 * p, len(work)):
             for sched, fn in (("static", static_makespan), ("dynamic:1", dynamic_makespan)):
-                total = sum(fn(work[i:i + batch], P) for i in range(0, len(work), batch))
-                lower = sum(work) / P
+                total = sum(fn(work[i:i + batch], p) for i in range(0, len(work), batch))
+                lower = sum(work) / p
                 out.append(dict(order=order, batch=batch, sched=sched, model_ms=total / 1000,
                                 ideal_ms=lower / 1000, model_imbalance=total / lower))
-    path = os.path.join(ROOT, "results", "B_model.csv")
-    with open(path, "w", newline="") as f:
+    with open(args.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0]))
         w.writeheader()
         w.writerows(out)

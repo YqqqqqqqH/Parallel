@@ -1,0 +1,9 @@
+ivf_simd.cpp:26:9: missed: couldn't vectorize loop
+ivf_simd.cpp:26:9: missed: not vectorized: no vectype for stmt: _21 = D.54839[_43];
+ scalar_type: double
+ivf_simd.cpp:26:9: missed: statement clobbers memory: __builtin_memset (&D.54839, 0, 32);
+ivf_simd.cpp:36:9: missed: statement clobbers memory: __builtin_memset (&D.54860, 0, 16);
+ivf_simd.cpp:50:35: missed: couldn't vectorize loop
+ivf_simd.cpp:50:35: missed: not vectorized: control flow in loop.
+ivf_simd.cpp:50:35: missed: couldn't vectorize loop
+ivf_simd.cpp:50:35: missed: not vectorized: control flow in loop.

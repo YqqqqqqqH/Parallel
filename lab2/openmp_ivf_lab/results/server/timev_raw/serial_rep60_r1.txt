@@ -1,0 +1,28 @@
+/usr/bin/time -v ./ivf_lab --base /var/dataset/sift_base.fbin --centroids /var/dataset/centroid_4096.fvecs --cluster-ids /var/dataset/cluster_id_4096.ivecs --queries-file /var/dataset/sift_query.fbin --gt /var/dataset/gt.ibin --only serial --batch 64 --queries 1024 --repeats 60
+N=1000000 dim=128 nlist=4096 strategy=serial threads=1 dist=scalar isa=default sched=static coarse=lib cutoff=0 order=orig
+correctness=PASS recall@10=0.698145
+time_ms[min/median/max]=880.343600/903.353994/934.411615 qps=1133.553409
+call_ms[p50/p95]=56.355631/59.761034 mean_C=2231.036133 threads_active=1
+	Command being timed: "./ivf_lab --base /var/dataset/sift_base.fbin --centroids /var/dataset/centroid_4096.fvecs --cluster-ids /var/dataset/cluster_id_4096.ivecs --queries-file /var/dataset/sift_query.fbin --gt /var/dataset/gt.ibin --only serial --batch 64 --queries 1024 --repeats 60"
+	User time (seconds): 57.04
+	System time (seconds): 0.63
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:57.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1013832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 263763
+	Voluntary context switches: 1
+	Involuntary context switches: 250
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

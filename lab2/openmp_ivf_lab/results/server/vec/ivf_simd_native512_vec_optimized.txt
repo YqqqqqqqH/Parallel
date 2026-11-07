@@ -1,0 +1,7 @@
+ivf_simd.cpp:17:31: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:17:31: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:26:9: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:28:40: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 64 byte vectors
+ivf_simd.cpp:36:9: optimized: loop vectorized using 32 byte vectors
+ivf_simd.cpp:38:32: optimized: loop vectorized using 64 byte vectors

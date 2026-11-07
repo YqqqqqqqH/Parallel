@@ -1,0 +1,12 @@
+ivf_lab_native --dist simd32 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd32 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd64 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist simd64 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist scalar --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native --dist scalar --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd32 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd32 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd64 --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist simd64 --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist scalar --only omp1 --threads 16 --batch 64 | correctness=PASS recall@10=0.698145
+ivf_lab_native512 --dist scalar --only omp2 --threads 16 --batch 1 --grain 128 | correctness=PASS recall@10=0.698145

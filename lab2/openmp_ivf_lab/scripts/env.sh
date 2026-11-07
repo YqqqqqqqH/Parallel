@@ -7,7 +7,11 @@ source scripts/common.sh
   echo "== 记录时间"; date -Iseconds
   echo "== uname -a"; uname -a
   echo "== lscpu"; lscpu
-  echo "== 说明：物理 CPU 为 i7-14650HX（8P+8E=16 核 24 线程）；WSL2 中 lscpu 的 12 核×2 是虚拟拓扑。本实验 P=16"
+  if grep -q "i7-14650HX" /proc/cpuinfo; then
+    echo "== 说明：物理 CPU 为 i7-14650HX（8P+8E=16 核 24 线程）；WSL2 中 lscpu 的 12 核×2 是虚拟拓扑。本实验 P=16"
+  else
+    echo "== 说明：本机 lscpu 拓扑可能是虚拟化后的结果；P 的取值见实验日志（服务器对照 CP-S1）"
+  fi
   echo "== 可用 CPU 集合"; taskset -cp $$
   echo "== 编译器"; g++ --version | head -1
   echo "== 编译选项"; grep -E '^(CXXFLAGS|NATIVE|SAN) =' Makefile
@@ -20,5 +24,5 @@ source scripts/common.sh
   reg.exe query 'HKLM\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes' /v ActiveOverlayAcPowerScheme 2>/dev/null | tr -d '\r' | grep -i overlay || echo "(不可用)"
   echo "== perf"; /usr/lib/linux-tools/6.8.0-147-generic/perf version 2>&1; echo "perf_event_paranoid=$(cat /proc/sys/kernel/perf_event_paranoid)"
   echo "== 数据目录 $IVF_DATA"; ls -la "$IVF_DATA"
-} > results/env.txt 2>&1
-echo "已写入 results/env.txt"
+} > "${IVF_RESULTS:-results}/env.txt" 2>&1
+echo "已写入 ${IVF_RESULTS:-results}/env.txt"
