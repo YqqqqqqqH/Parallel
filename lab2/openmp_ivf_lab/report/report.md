@@ -218,7 +218,7 @@ header-includes:
 
 ## E　正确性运行截图
 
-（待本人在服务器上运行后截图插入。文字版：`results/server/correctness_run.txt`；完整检查矩阵：`results/server/e0_correctness_official.txt`（101 次全部 PASS），ASan 构建：`results/server/e0_correctness_official_asan.txt`。）
+![正确性运行（课程服务器，`bash scripts/server_final.sh`）：主机为 Xeon Gold 5218，`/var/dataset` 下为 5 个官方数据文件；student_tests 的 8950 种配置与串行逐位一致；官方数据上串行、omp1+simd32、omp2、omp2+中心距离拆分、omp2+simd32、std::thread 与全库扫描的完整检查全部 PASS（Q=1024 时 Recall@10=0.698，全库扫描为 1）；末行为官方索引的列表长度统计。完整的 101 次检查矩阵见 `results/server/e0_correctness_official.txt`，ASan 构建见 `results/server/e0_correctness_official_asan.txt`。](../figures/server/image.png){width=96%}
 
 ## F　AI 对话截图
 
