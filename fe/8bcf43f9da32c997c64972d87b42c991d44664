@@ -1,0 +1,70 @@
+lab2/openmp_ivf_lab/results/p0_profile_np32.csv
+  s_f8ff378ef2e236::t_4c9e0bf78cf255 1-1025
+lab2/openmp_ivf_lab/实验日志.md
+  s_f8ff378ef2e236::t_1a8265ad814b3d 77-124
+  s_f8ff378ef2e236::t_e710c158c81986 125-194
+lab2/openmp_ivf_lab/results/A_wait_summary.csv
+  s_f8ff378ef2e236::t_fccb0951a297f1 1-14
+lab2/openmp_ivf_lab/results/stats/A_omp1_b64_p8.csv
+  s_f8ff378ef2e236::t_dedc4e57949482 1-25
+lab2/openmp_ivf_lab/results/p0_profile_np8.csv
+  s_f8ff378ef2e236::t_4c9e0bf78cf255 1-1025
+lab2/openmp_ivf_lab/results/stats/A_omp2_b1_g4096_p16_passive.csv
+  s_f8ff378ef2e236::t_3a0fb973dc8cb9 1-49
+lab2/openmp_ivf_lab/results/A_summary.csv
+  s_f8ff378ef2e236::t_f96a08de27403a 1-33
+lab2/openmp_ivf_lab/results/p0_profile_np1.csv
+  s_f8ff378ef2e236::t_4c9e0bf78cf255 1-1025
+lab2/openmp_ivf_lab/results/A_wait.csv
+  s_f8ff378ef2e236::t_fccb0951a297f1 1-261
+lab2/openmp_ivf_lab/scripts/summarize.py
+  s_f8ff378ef2e236::t_3fcb92a6e31c4c 18,23-25,50,52
+  s_f8ff378ef2e236::t_967d6a21bca2c1 1-17,19-22,26-49,51,53-58
+lab2/openmp_ivf_lab/results/stats/A_omp1_b64_p1_np1.csv
+  s_f8ff378ef2e236::t_3a0fb973dc8cb9 1-4
+lab2/openmp_ivf_lab/results/stats/A_omp1_b64_p1.csv
+  s_f8ff378ef2e236::t_dedc4e57949482 1-4
+lab2/openmp_ivf_lab/scripts/plot.py
+  s_f8ff378ef2e236::t_e8de5b85d110c8 93-94
+  s_f8ff378ef2e236::t_e5043cbb1e4e5e 1-63,65-68,76-87,89-91,96,100-113,117-127
+  s_f8ff378ef2e236::t_05d336d3380ebb 64,73-74,88,92,95
+  s_f8ff378ef2e236::t_c4ba95a9de8718 69-72,97-99,114-116
+  s_f8ff378ef2e236::t_cdf05b47966c2e 75
+lab2/openmp_ivf_lab/scripts/bench.py
+  s_f8ff378ef2e236::t_3fcb92a6e31c4c 56-65,125,132,141-145,182-183,192
+lab2/openmp_ivf_lab/results/C.csv
+  s_f8ff378ef2e236::t_643eed076e0273 1-121
+lab2/openmp_ivf_lab/results/stats/A_omp1_b64_p16.csv
+  s_f8ff378ef2e236::t_dedc4e57949482 1-49
+lab2/openmp_ivf_lab/results/stats/A_omp1_b64_p16_np1.csv
+  s_f8ff378ef2e236::t_3a0fb973dc8cb9 1-49
+lab2/openmp_ivf_lab/results/A_sched.csv
+  s_f8ff378ef2e236::t_643eed076e0273 1-81
+lab2/openmp_ivf_lab/results/stats/A_omp2_b1_g4096_p16.csv
+  s_f8ff378ef2e236::t_dedc4e57949482 1-49
+lab2/openmp_ivf_lab/results/A.csv
+  s_f8ff378ef2e236::t_a11aed5b5a1a23 422-961
+  s_f8ff378ef2e236::t_d34d09ae371a46 1-421
+lab2/openmp_ivf_lab/results/p0_summary.txt
+  s_f8ff378ef2e236::t_4c9e0bf78cf255 1-6
+lab2/openmp_ivf_lab/results/A_sched_summary.csv
+  s_f8ff378ef2e236::t_45adefe32439ac 1-5
+lab2/openmp_ivf_lab/results/C_summary.csv
+  s_f8ff378ef2e236::t_9e6a97fa21e847 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fe8bcf43f9da32c997c64972d87b42c991d44664",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
