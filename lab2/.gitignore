@@ -1,0 +1,6 @@
+# 编译产物
+ivf_lab
+ivf_tests
+ivf_lab_*
+student_tests
+*.o
