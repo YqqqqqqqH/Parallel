@@ -1,0 +1,104 @@
+lab2/openmp_ivf_lab/ivf_search.h
+  s_f8ff378ef2e236::t_447913f334039f 28-35,41-44,48-52
+  s_f8ff378ef2e236::t_2da1e5cc6fd909 69-71
+lab2/openmp_ivf_lab/ivf_student.cpp
+  s_f8ff378ef2e236::t_f7f4464a605a07 1-2,4,6-8,10-11,14-104,106-141,143-149,151-158,160-172,174-204,206-215,217-306,308-312,315-319,322-326
+  s_f8ff378ef2e236::t_2a7a66d564967f 105,142,150,159,173,205,216
+lab2/openmp_ivf_lab/ivf_lab.cpp
+  s_f8ff378ef2e236::t_f49a88a996a7cb 2,4,6,13,17,21-27,30-32,40-41,55-76,98-105,116-117,119-131,141,145-246,250,253-255,264-265,281-307,310,312-334,341,345,351,353-354,370-371,375-384,386-388,390,392-410,415-419,423,429-431
+  s_f8ff378ef2e236::t_c62303a19cfceb 28-29
+  s_f8ff378ef2e236::t_e9549a372d001f 372
+  s_f8ff378ef2e236::t_9cace52248bf7a 12
+  s_f8ff378ef2e236::t_07bcfd2605fb90 420
+lab2/openmp_ivf_lab/results/e0_correctness.txt
+  s_f8ff378ef2e236::t_4f96ccc3f15934 1-103
+lab2/openmp_ivf_lab/results/vec/ivf_search_native.asm
+  s_f8ff378ef2e236::t_d595e49a023933 1-2137
+lab2/openmp_ivf_lab/results/vec/ivf_simd_default_vec_optimized.txt
+  s_f8ff378ef2e236::t_d595e49a023933 1-5
+  s_f8ff378ef2e236::t_95c537931ec116 6-10
+lab2/openmp_ivf_lab/results/vec/ivf_search_default_vec_optimized.txt
+  s_f8ff378ef2e236::t_95c537931ec116 6-10
+  s_f8ff378ef2e236::t_d595e49a023933 1-5
+lab2/openmp_ivf_lab/results/vec/ivf_search_default.asm
+  s_f8ff378ef2e236::t_d595e49a023933 1-2146
+lab2/openmp_ivf_lab/results/vec/ivf_simd_default_vec_missed.txt
+  s_f8ff378ef2e236::t_95c537931ec116 1-9
+lab2/openmp_ivf_lab/results/vec/ivf_simd_default.asm
+  s_f8ff378ef2e236::t_d595e49a023933 1-372
+lab2/openmp_ivf_lab/scripts/common.sh
+  s_f8ff378ef2e236::t_4f96ccc3f15934 1-6
+lab2/openmp_ivf_lab/ivf_stats.h
+  s_f8ff378ef2e236::t_957ff07c403b85 1-28,32-47
+  s_f8ff378ef2e236::t_35fc1a93e76c69 29-31
+lab2/openmp_ivf_lab/实验日志.md
+  s_f8ff378ef2e236::t_5552bece222193 1-76
+lab2/openmp_ivf_lab/scripts/bench.py
+  s_f8ff378ef2e236::t_3d5023314b0a6a 1-186
+lab2/openmp_ivf_lab/tests/student_tests.cpp
+  s_f8ff378ef2e236::t_1325aed7cd355d 1-272
+lab2/openmp_ivf_lab/results/e0_correctness_asan.txt
+  s_f8ff378ef2e236::t_95c537931ec116 28-29
+  s_f8ff378ef2e236::t_d595e49a023933 10
+  s_f8ff378ef2e236::t_32960f6989fba8 44
+  s_f8ff378ef2e236::t_d2779ae5fec1d7 7-9
+  s_f8ff378ef2e236::t_9fcb3eb99c351b 11-13,25-27
+  s_f8ff378ef2e236::t_a1133bf646a1f9 30-32,41-43
+  s_f8ff378ef2e236::t_9b941254a4cf5f 45-47
+  s_f8ff378ef2e236::t_4ce2e413b9042a 1-6,14-24,33-40,48-103
+lab2/openmp_ivf_lab/scripts/prepare_data.py
+  s_f8ff378ef2e236::t_ea54e6c76157e3 1-195
+lab2/openmp_ivf_lab/results/vec/ivf_simd_native.asm
+  s_f8ff378ef2e236::t_d595e49a023933 1-421
+lab2/openmp_ivf_lab/results/vec/ivf_simd_native_vec_missed.txt
+  s_f8ff378ef2e236::t_95c537931ec116 1-6
+lab2/openmp_ivf_lab/scripts/env.sh
+  s_f8ff378ef2e236::t_180a5b3806d99d 1-24
+lab2/openmp_ivf_lab/data_manifest/MANIFEST.json
+  s_f8ff378ef2e236::t_180a5b3806d99d 1-73
+lab2/openmp_ivf_lab/results/vec/ivf_search_native_vec_missed.txt
+  s_f8ff378ef2e236::t_95c537931ec116 1-221
+lab2/openmp_ivf_lab/ivf_simd.cpp
+  s_f8ff378ef2e236::t_0ec14b75b1e274 1-75
+lab2/.gitignore
+  s_f8ff378ef2e236::t_32960f6989fba8 7
+lab2/openmp_ivf_lab/results/vec/summary.txt
+  s_f8ff378ef2e236::t_95c537931ec116 7-8,20-21
+  s_f8ff378ef2e236::t_d595e49a023933 1-6,9-19,22-28
+lab2/openmp_ivf_lab/results/vec/ivf_search_default_vec_missed.txt
+  s_f8ff378ef2e236::t_95c537931ec116 1-222
+lab2/openmp_ivf_lab/scripts/check_correctness.sh
+  s_f8ff378ef2e236::t_58f1429cb4ffb5 43-44
+  s_f8ff378ef2e236::t_4f96ccc3f15934 1-42
+lab2/openmp_ivf_lab/Makefile
+  s_f8ff378ef2e236::t_5ec5e0aafd7294 4-6,8-9,11,14,16-28,33-38,42-51,53
+lab2/openmp_ivf_lab/results/vec/ivf_search_native_vec_optimized.txt
+  s_f8ff378ef2e236::t_d595e49a023933 1-7
+  s_f8ff378ef2e236::t_95c537931ec116 8-14
+lab2/openmp_ivf_lab/scripts/profile.sh
+  s_f8ff378ef2e236::t_2744c7470eac27 1-11
+lab2/openmp_ivf_lab/scripts/vecreport.sh
+  s_f8ff378ef2e236::t_d595e49a023933 1-17,21-33,36-39
+  s_f8ff378ef2e236::t_95c537931ec116 18-20,34-35
+lab2/openmp_ivf_lab/results/vec/ivf_simd_native_vec_optimized.txt
+  s_f8ff378ef2e236::t_95c537931ec116 7-12
+  s_f8ff378ef2e236::t_d595e49a023933 1-6
+lab2/openmp_ivf_lab/results/env.txt
+  s_f8ff378ef2e236::t_180a5b3806d99d 1-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fa2d8a6bb31a636a8dae0b0c9dcd8c238889676d",
+  "prompts": {},
+  "sessions": {
+    "s_f8ff378ef2e236": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dea5ddb9-5f32-473b-98d0-974a3169f08b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Felix-Yang887 <felix@example.com>"
+    }
+  }
+}
