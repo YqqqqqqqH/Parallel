@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """实验驱动：按实验名生成配置，每个配置单独启动一个 ivf_lab 进程，汇总各进程 --csv 输出。
 
-- 每一轮内配置顺序随机打乱（种子固定），减少笔记本温度/功耗随时间漂移带来的系统偏差；
+- 每一轮内配置顺序随机打乱（种子固定），减少机器温度、负载随时间漂移带来的系统偏差；
 - 每行结果附加 exp、round、bin 三列，写入 results/<exp>.csv（追加模式由 --append 控制）；
 - 任一进程失败（含正确性检查失败）立即中止。
 
@@ -27,7 +27,7 @@ import sys
 import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.environ.get("IVF_DATA", "/home/felix/datasets/sift1m")
+DATA = os.environ.get("IVF_DATA", "/var/dataset")
 DATA_ARGS = ["--base", f"{DATA}/sift_base.fbin", "--centroids", f"{DATA}/centroid_4096.fvecs",
              "--cluster-ids", f"{DATA}/cluster_id_4096.ivecs",
              "--queries-file", f"{DATA}/sift_query.fbin", "--gt", f"{DATA}/gt.ibin"]

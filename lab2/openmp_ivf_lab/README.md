@@ -1,6 +1,6 @@
 # OpenMP IVF-Flat 实验代码
 
-这是 [向量检索作业](openmp_ivf_topk_lab.pdf) 的配套代码，使用 SIFT1M 数据和已经训练好的 IVF 索引。数据读取、串行检索、结果检查和计时已经写好。OpenMP、`std::thread` 和 SIMD 都需要自己实现，多线程函数留在 `ivf_student.cpp` 中。
+这是 [向量检索作业](openmp_ivf_topk_lab.md) 的配套代码，使用 SIFT1M 数据和已经训练好的 IVF 索引。数据读取、串行检索、结果检查和计时已经写好。OpenMP、`std::thread` 和 SIMD 都需要自己实现，多线程函数留在 `ivf_student.cpp` 中。
 
 ## 编译和运行
 

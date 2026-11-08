@@ -236,4 +236,4 @@ bash scripts/server_supp.sh     # P0、调度、实验 B/C/D、ASan
 IVF_RESULTS=results/server python3 -I scripts/bench.py S2b --rounds 3
 ```
 
-汇总与作图（需要 pandas、matplotlib）：`IVF_RESULTS=results/server python -I scripts/summarize.py <实验名>`，`IVF_RESULTS=results/server python -I scripts/plot.py A C D E`。所有命令与原始输出记录在 `实验日志.md` 和 `results/server/` 中。
+汇总与作图（需要 pandas、matplotlib）：`IVF_RESULTS=results/server python -I scripts/summarize.py <实验名>`，`IVF_RESULTS=results/server python -I scripts/plot.py A C D E`。完整的复现步骤见 `复现说明.md`，原始输出在 `results/server/`。
