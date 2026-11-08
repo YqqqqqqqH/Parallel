@@ -29,7 +29,7 @@ header-includes:
 
 \begin{center}
 {\Large\bfseries 实验二：OpenMP IVF-Flat 向量检索　实验报告}\\[3pt]
-姓名：杨清徽　　学号：2024201584　　2026 年 11 月
+姓名：杨清徽　　学号：2024201584　
 \end{center}
 
 **摘要**　本实验在课程实验服务器上，用官方 SIFT1M 数据与 IVF4096 索引（`/var/dataset`）实现并比较两种 OpenMP 检索：按查询并行（omp1）和查询内任务划分（omp2），并实现 `omp simd` 距离函数和 `std::thread` 对照。报告按两个应用场景组织：**吞吐场景**（大 batch=4P=64，看 QPS）和**延迟场景**（batch=1，看单查询响应时间）。吞吐场景下两种策略在 16 线程达到 11.7–11.8 倍，按查询并行已经足够，剩下的损失来自线程之间的相互干扰；延迟场景下，omp2 被串行的中心选择（占 63.7%）限制在 1.3 倍以内，把中心距离也拆成任务后可达 5.25 倍（探索）。SIMD 在单线程时快 1.32–1.82 倍；每次调用都新建线程的 `std::thread` 要多付约 2.2 ms。服务器上 perf 不可用，改用 GNU time 差分。
@@ -146,8 +146,7 @@ header-includes:
 
 # 7　AI 使用声明与参考资料
 
-**AI 使用声明**：本实验使用了 Claude（Anthropic，通过 Claude Code 使用 Claude Opus 5.5 模型），完成了全部 OpenMP 策略、SIMD 距离和 std::thread 版本的实现，扩展 harness，编写测试、实验、统计和作图脚本，经 SSH 在课程服务器上运行实验，并起草本报告。方案决策由本人作出：把中心距离拆分作为探索、omp1 用 dynamic:1；grain 取 128（batch=1）和 1024（batch=64），不设小任务阈值；服务器 P 取 16；报告按吞吐与延迟两个场景组织，只保留三条关键预测。数据都可以由仓库中的脚本和 `results/server/` 复现，已由本人核对；对话截图见附录 F。
-
+**AI 使用声明**：本实验使用了 Claude Code，完成了全部 OpenMP 策略、SIMD 距离和 std::thread 版本的实现，扩展 harness，编写测试、实验、统计和作图脚本，经 SSH 在课程服务器上运行实验，并起草本报告。方案决策由本人作出：把中心距离拆分作为探索、omp1 用 dynamic:1；grain 取 128（batch=1）和 1024（batch=64），不设小任务阈值；服务器 P 取 16；报告按吞吐与延迟两个场景组织，只保留三条关键预测。数据都可以由仓库中的脚本和 `results/server/` 复现，已由本人核对。
 **参考资料**：[1] Faiss indexes，<https://github.com/facebookresearch/faiss/wiki/Faiss-indexes>；[2] OpenMP 5.2 taskloop / taskgroup / SIMD，<https://www.openmp.org/spec-html/5.2/>（openmpse74、92、60）；[3] perf-stat(1)，<https://man7.org/linux/man-pages/man1/perf-stat.1.html>；[4] H. Jégou et al. Product Quantization for Nearest Neighbor Search. TPAMI 2011，<https://doi.org/10.1109/TPAMI.2010.57>（SIFT1M 出处）；[5] GNU libgomp 手册，<https://gcc.gnu.org/onlinedocs/libgomp/>。
 
 \newpage
@@ -220,11 +219,8 @@ header-includes:
 
 ![正确性运行（课程服务器，`bash scripts/server_final.sh`）：主机为 Xeon Gold 5218，`/var/dataset` 下为 5 个官方数据文件；student_tests 的 8950 种配置与串行逐位一致；官方数据上串行、omp1+simd32、omp2、omp2+中心距离拆分、omp2+simd32、std::thread 与全库扫描的完整检查全部 PASS（Q=1024 时 Recall@10=0.698，全库扫描为 1）；末行为官方索引的列表长度统计。完整的 101 次检查矩阵见 `results/server/e0_correctness_official.txt`，ASan 构建见 `results/server/e0_correctness_official_asan.txt`。](../figures/server/image.png){width=96%}
 
-## F　AI 对话截图
 
-（待本人插入。）
-
-## G　复现命令（课程服务器上，`IVF_DATA=/var/dataset`）
+## F　复现命令（课程服务器上，`IVF_DATA=/var/dataset`）
 
 ```
 make && make student_test && make student_test_asan
